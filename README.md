@@ -1,4 +1,4 @@
-# npm-boilerplate
+# cottus
 Boilerplate for creating npm packages.
 
 [![Version][badge-vers]][npm]
@@ -42,7 +42,7 @@ Package is [continuously tested][appveyor-url] on darwin, linux, win32 platforms
 To install the library run the following command
 
 ```bash
-  npm i --save npm-boilerplate
+  npm i --save cottus
 ```
 
 ## Usage
@@ -55,47 +55,47 @@ To install the library run the following command
 
 Make the changes to the code and tests. Then commit to your branch. Be sure to follow the commit message conventions. Read [Contributing Guidelines](.github/CONTRIBUTING.md) for details.
 
-[npm]: https://www.npmjs.com/package/npm-boilerplate
-[github]: https://github.com/pustovitDmytro/npm-boilerplate
-[coveralls]: https://coveralls.io/github/pustovitDmytro/npm-boilerplate?branch=master
-[badge-deps]: https://img.shields.io/david/pustovitDmytro/npm-boilerplate.svg
-[badge-vers]: https://img.shields.io/npm/v/npm-boilerplate.svg
-[badge-lic]: https://img.shields.io/github/license/pustovitDmytro/npm-boilerplate.svg
-[badge-coverage]: https://coveralls.io/repos/github/pustovitDmytro/npm-boilerplate/badge.svg?branch=master
-[url-coverage]: https://coveralls.io/github/pustovitDmytro/npm-boilerplate?branch=master
+[npm]: https://www.npmjs.com/package/cottus
+[github]: https://github.com/pustovitDmytro/cottus
+[coveralls]: https://coveralls.io/github/pustovitDmytro/cottus?branch=master
+[badge-deps]: https://img.shields.io/david/pustovitDmytro/cottus.svg
+[badge-vers]: https://img.shields.io/npm/v/cottus.svg
+[badge-lic]: https://img.shields.io/github/license/pustovitDmytro/cottus.svg
+[badge-coverage]: https://coveralls.io/repos/github/pustovitDmytro/cottus/badge.svg?branch=master
+[url-coverage]: https://coveralls.io/github/pustovitDmytro/cottus?branch=master
 
-[snyk-badge]: https://snyk-widget.herokuapp.com/badge/npm/npm-boilerplate/badge.svg
-[snyk-url]: https://snyk.io/advisor/npm-package/npm-boilerplate
+[snyk-badge]: https://snyk-widget.herokuapp.com/badge/npm/cottus/badge.svg
+[snyk-url]: https://snyk.io/advisor/npm-package/cottus
 
-[tests-badge]: https://img.shields.io/circleci/build/github/pustovitDmytro/npm-boilerplate
-[tests-url]: https://app.circleci.com/pipelines/github/pustovitDmytro/npm-boilerplate
+[tests-badge]: https://img.shields.io/circleci/build/github/pustovitDmytro/cottus
+[tests-url]: https://app.circleci.com/pipelines/github/pustovitDmytro/cottus
 
-[codefactor-badge]: https://www.codefactor.io/repository/github/pustovitdmytro/npm-boilerplate/badge
-[codefactor-url]: https://www.codefactor.io/repository/github/pustovitdmytro/npm-boilerplate
+[codefactor-badge]: https://www.codefactor.io/repository/github/pustovitdmytro/cottus/badge
+[codefactor-url]: https://www.codefactor.io/repository/github/pustovitdmytro/cottus
 
-[commit-activity-badge]: https://img.shields.io/github/commit-activity/m/pustovitDmytro/npm-boilerplate
+[commit-activity-badge]: https://img.shields.io/github/commit-activity/m/pustovitDmytro/cottus
 
-[scrutinizer-badge]: https://scrutinizer-ci.com/g/pustovitDmytro/npm-boilerplate/badges/quality-score.png?b=master
-[scrutinizer-url]: https://scrutinizer-ci.com/g/pustovitDmytro/npm-boilerplate/?branch=master
+[scrutinizer-badge]: https://scrutinizer-ci.com/g/pustovitDmytro/cottus/badges/quality-score.png?b=master
+[scrutinizer-url]: https://scrutinizer-ci.com/g/pustovitDmytro/cottus/?branch=master
 
-[lgtm-lg-badge]: https://img.shields.io/lgtm/grade/javascript/g/pustovitDmytro/npm-boilerplate.svg?logo=lgtm&logoWidth=18
-[lgtm-lg-url]: https://lgtm.com/projects/g/pustovitDmytro/npm-boilerplate/context:javascript
+[lgtm-lg-badge]: https://img.shields.io/lgtm/grade/javascript/g/pustovitDmytro/cottus.svg?logo=lgtm&logoWidth=18
+[lgtm-lg-url]: https://lgtm.com/projects/g/pustovitDmytro/cottus/context:javascript
 
-[lgtm-alerts-badge]: https://img.shields.io/lgtm/alerts/g/pustovitDmytro/npm-boilerplate.svg?logo=lgtm&logoWidth=18
-[lgtm-alerts-url]: https://lgtm.com/projects/g/pustovitDmytro/npm-boilerplate/alerts/
+[lgtm-alerts-badge]: https://img.shields.io/lgtm/alerts/g/pustovitDmytro/cottus.svg?logo=lgtm&logoWidth=18
+[lgtm-alerts-url]: https://lgtm.com/projects/g/pustovitDmytro/cottus/alerts/
 
 [codacy-badge]: https://app.codacy.com/project/badge/Grade/8667aa23afaa4725854f098c4b5e8890
-[codacy-url]: https://www.codacy.com/gh/pustovitDmytro/npm-boilerplate/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pustovitDmytro/npm-boilerplate&amp;utm_campaign=Badge_Grade
+[codacy-url]: https://www.codacy.com/gh/pustovitDmytro/cottus/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pustovitDmytro/cottus&amp;utm_campaign=Badge_Grade
 
-[sonarcloud-badge]: https://sonarcloud.io/api/project_badges/measure?project=pustovitDmytro_npm-boilerplate&metric=alert_status
-[sonarcloud-url]: https://sonarcloud.io/dashboard?id=pustovitDmytro_npm-boilerplate
+[sonarcloud-badge]: https://sonarcloud.io/api/project_badges/measure?project=pustovitDmytro_cottus&metric=alert_status
+[sonarcloud-url]: https://sonarcloud.io/dashboard?id=pustovitDmytro_cottus
 
-[npm-downloads-badge]: https://img.shields.io/npm/dw/npm-boilerplate
-[npm-size-badge]: https://img.shields.io/bundlephobia/min/npm-boilerplate
-[npm-size-url]: https://bundlephobia.com/result?p=npm-boilerplate
+[npm-downloads-badge]: https://img.shields.io/npm/dw/cottus
+[npm-size-badge]: https://img.shields.io/bundlephobia/min/cottus
+[npm-size-url]: https://bundlephobia.com/result?p=cottus
 
 [appveyor-badge]: https://ci.appveyor.com/api/projects/status/lik73h3vxd7687pr/branch/master?svg=true
-[appveyor-url]: https://ci.appveyor.com/project/pustovitDmytro/npm-boilerplate/branch/master
+[appveyor-url]: https://ci.appveyor.com/project/pustovitDmytro/cottus/branch/master
 
-[fossa-badge]: https://app.fossa.com/api/projects/custom%2B24828%2Fnpm-boilerplate.svg?type=shield
-[fossa-url]: https://app.fossa.com/projects/custom%2B24828%2Fnpm-boilerplate?ref=badge_shield
+[fossa-badge]: https://app.fossa.com/api/projects/custom%2B24828%2Fcottus.svg?type=shield
+[fossa-url]: https://app.fossa.com/projects/custom%2B24828%2Fcottus?ref=badge_shield
