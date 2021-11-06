@@ -1,4 +1,5 @@
 import path from 'path';
+import { assert } from 'chai';
 import { entry } from './constants';
 
 export function load(relPath, clearCache) {
@@ -15,4 +16,35 @@ export function load(relPath, clearCache) {
 
 export function resolve(relPath) {
     return require.resolve(path.join(entry, relPath));
+}
+
+export class RuleTester {
+    constructor(rules) {
+        const { default:cottus, ValidationError } = load('index.js');
+
+        this._validator = cottus.compile(rules);
+        this._ValidationError = ValidationError;
+    }
+
+    positive(input, output) {
+        const result = this._validator.validate(input);
+
+        assert.deepEqual(result, output);
+    }
+
+    negative(input, code, message) {
+        try {
+            this._validator.validate(input);
+            assert.fail('rule should fail');
+        } catch (error) {
+            if (!(error instanceof this._ValidationError)) throw error;
+            const json = error.toJSON();
+
+            assert.deepEqual(json.details[0], {
+                code,
+                message,
+                value : input
+            });
+        }
+    }
 }

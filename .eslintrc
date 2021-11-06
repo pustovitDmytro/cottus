@@ -1,5 +1,8 @@
 {
     "extends": [
         "incredible"
-    ]
+    ],
+    "rules": {
+        "lines-between-class-members": [0, {"exceptAfterSingleLine": true}]
+    }
 }
