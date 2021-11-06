@@ -3,6 +3,14 @@
         "incredible"
     ],
     "rules": {
-        "lines-between-class-members": [0, {"exceptAfterSingleLine": true}]
-    }
+        "lines-between-class-members": [ 0, { "exceptAfterSingleLine": true } ]
+    },
+    "overrides": [
+        {
+            "files"   : [ "src/errors/*.js" ],
+            "rules": {
+                "unicorn/filename-case" : [ 0 ]
+            }
+        }
+    ]
 }
