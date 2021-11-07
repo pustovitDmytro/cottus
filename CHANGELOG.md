@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/pustovitDmytro/cottus/compare/v1.0.0...v1.1.0) (2021-11-07)
+
+
+### New
+
+* adds hierarhy rules [every, attributes]. #10 ([3142838](https://github.com/pustovitDmytro/cottus/commit/31428386b5735cfb8b577e93c6221a07863ffda9)), closes [#10](https://github.com/pustovitDmytro/cottus/issues/10)
+* handle simultanious errors ([7a1369d](https://github.com/pustovitDmytro/cottus/commit/7a1369d1fb9436b5fe11b656bfcaf4e84d27acf7))
+
 # 1.0.0 (2021-11-06)
 
 
