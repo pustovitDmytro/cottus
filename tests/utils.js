@@ -33,18 +33,42 @@ export class RuleTester {
     }
 
     negative(input, code, message) {
-        try {
-            this._validator.validate(input);
-            assert.fail('rule should fail');
-        } catch (error) {
-            if (!(error instanceof this._ValidationError)) throw error;
-            const json = error.toJSON();
+        const error = ensureError(
+            () => this._validator.validate(input)
+        );
 
-            assert.deepEqual(json.details[0], {
-                code,
-                message,
-                value : input
-            });
-        }
+        if (!(error instanceof this._ValidationError)) throw error;
+        const json = error.hash;
+
+        assert.deepEqual(json.details[0], {
+            code,
+            message,
+            path  : [],
+            value : input
+        });
     }
 }
+
+
+export function ensureError(handler) {
+    try {
+        handler();
+        assert.fail('Expected to throw an error');
+    } catch (error)  {
+        if (error.name === 'AssertionError') throw error;
+
+        return error;
+    }
+}
+
+export async function ensureErrorAsync(handler) {
+    try {
+        await handler();
+        assert.fail('Expected to throw an error');
+    } catch (error)  {
+        if (error.name === 'AssertionError') throw error;
+
+        return error;
+    }
+}
+

@@ -7,7 +7,7 @@
     },
     "overrides": [
         {
-            "files"   : [ "src/errors/*.js" ],
+            "files"   : [ "src/errors/format/*.js" ],
             "rules": {
                 "unicorn/filename-case" : [ 0 ]
             }
