@@ -82,7 +82,7 @@ export default class Validator {
 
         for (const rule of this.rules) {
             try {
-                valid = rule.validate(valid);
+                valid = rule.run(valid);
             } catch (error) {
                 if (error instanceof BaseError) {
                     if (!error.hasContext) {

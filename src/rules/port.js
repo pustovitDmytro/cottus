@@ -1,6 +1,7 @@
 import { WRONG_PORT_NUMBER } from '../errors';
+import Base from './Base';
 
-export default class PortRule {
+export default class PortRule extends Base {
     static schema = 'port';
     static errors = {}
     alias = [

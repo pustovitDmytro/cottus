@@ -1,15 +1,15 @@
 import { isValue } from 'myrmidon';
 import { REQUIRED } from '../errors';
+import Base from './Base';
 
-export default class RequiredRule {
+export default class RequiredRule extends Base {
     static schema = 'required';
-    static errors = { REQUIRED }
 
     validate(input) {
-        const e = this.constructor.errors;
-
-        if (!isValue(input)) throw new e.REQUIRED();
+        if (!isValue(input)) throw new REQUIRED();
 
         return input;
     }
+
+    static isOptional = false
 }

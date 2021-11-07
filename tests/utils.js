@@ -53,7 +53,7 @@ export class RuleTester {
 export function ensureError(handler) {
     try {
         handler();
-        assert.fail('Expected to throw an error');
+        assert.fail(`Expected ${handler.toString()} to throw an error`);
     } catch (error)  {
         if (error.name === 'AssertionError') throw error;
 
