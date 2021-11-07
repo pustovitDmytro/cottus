@@ -4,6 +4,11 @@ import NOT_OBJECT        from './format/NOT_OBJECT';
 import NOT_ARRAY         from './format/NOT_ARRAY';
 import NOT_INTEGER       from './format/NOT_INTEGER';
 import NOT_NUMBER        from './format/NOT_NUMBER';
+import WRONG_FORMAT      from './format/WRONG_FORMAT';
+import TOO_LOW           from './format/TOO_LOW';
+import TOO_SHORT         from './format/TOO_SHORT';
+import TOO_LONG          from './format/TOO_LONG';
+import TOO_HIGH          from './format/TOO_HIGH';
 
 export {
     REQUIRED,
@@ -11,5 +16,10 @@ export {
     NOT_OBJECT,
     NOT_ARRAY,
     NOT_INTEGER,
-    NOT_NUMBER
+    NOT_NUMBER,
+    WRONG_FORMAT,
+    TOO_LOW,
+    TOO_SHORT,
+    TOO_LONG,
+    TOO_HIGH
 };

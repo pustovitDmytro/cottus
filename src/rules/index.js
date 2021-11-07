@@ -4,9 +4,12 @@ import attributes from './attributes';
 import every from './every';
 import integer from './integer';
 import number from './number';
+import min from './min';
+import max from './max';
 
 export default [
     required,
     port, integer, number,
-    attributes, every
+    attributes, every,
+    min, max
 ];
