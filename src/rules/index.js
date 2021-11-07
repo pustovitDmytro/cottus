@@ -6,10 +6,12 @@ import integer from './integer';
 import number from './number';
 import min from './min';
 import max from './max';
+import string from './string';
 
 export default [
     required,
     port, integer, number,
     attributes, every,
-    min, max
+    min, max,
+    string
 ];

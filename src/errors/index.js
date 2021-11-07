@@ -9,6 +9,7 @@ import TOO_LOW           from './format/TOO_LOW';
 import TOO_SHORT         from './format/TOO_SHORT';
 import TOO_LONG          from './format/TOO_LONG';
 import TOO_HIGH          from './format/TOO_HIGH';
+import NOT_STRING        from './format/NOT_STRING';
 
 export {
     REQUIRED,
@@ -21,5 +22,6 @@ export {
     TOO_LOW,
     TOO_SHORT,
     TOO_LONG,
-    TOO_HIGH
+    TOO_HIGH,
+    NOT_STRING
 };
