@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/pustovitDmytro/cottus/compare/v1.1.0...v1.2.0) (2021-11-07)
+
+
+### New
+
+* adds 'number' and 'integer' rules. #10 ([eac38c2](https://github.com/pustovitDmytro/cottus/commit/eac38c2e1f8854625ee7f498c32ce0c38184273e)), closes [#10](https://github.com/pustovitDmytro/cottus/issues/10)
+
 # [1.1.0](https://github.com/pustovitDmytro/cottus/compare/v1.0.0...v1.1.0) (2021-11-07)
 
 
