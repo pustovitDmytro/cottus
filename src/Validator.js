@@ -7,14 +7,38 @@ import BaseError from './errors/format/Base';
 import ValidationError from './errors/ValidationError';
 
 export default class Validator {
-    constructor(cottus, schema, hierarchy) {
+    constructor(cottus, schema, parentContext) {
         this._schema = schema;
         this._cottus = cottus;
-        this._hierarchy = hierarchy;
+        this._hierarchy = [];
+        if (parentContext) {
+            this._hierarchy = parentContext.parent._nestedHierarhy(parentContext.key);
+            this.parent = parentContext.parent;
+        }
+    }
+
+    _nestedHierarhy(key) {
+        return [ ...this._hierarchy, key ];
+    }
+
+    get isNested() {
+        return !!this.parent;
+    }
+
+    _sendNestedErrors(errors) {
+        this.parent._receiveNestedErrors(errors);
+    }
+
+    _receiveNestedErrors(errors) {
+        if (this.isNested) {
+            return this.parent._sendNestedErrors(errors);
+        }
+
+        this.nestedErrors.push(...errors);
     }
 
     parse() {
-        this._validators = [];
+        this.rules = [];
         toArray(this._schema).forEach(schema => {
             let rulename = null;
 
@@ -32,10 +56,9 @@ export default class Validator {
             const Rule = this._cottus.rules[rulename];
 
             if (!Rule) throw new Error(`Rule [${rulename}] not found`);
-            this._validators.push(new Rule({
-                cottus    : this._cottus,
+            this.rules.push(new Rule({
                 params,
-                hierarchy : this._hierarchy
+                validator : this
             }));
         });
     }
@@ -53,28 +76,40 @@ export default class Validator {
 
 
     validate(input) {
+        this.nestedErrors = [];
         let valid = input;
         const errors = [];
 
-        for (const validator of this._validators) {
+        for (const rule of this.rules) {
             try {
-                valid = validator.validate(valid);
+                valid = rule.validate(valid);
             } catch (error) {
-                if (!(error instanceof BaseError)) throw error;
-                if (!error.hasContext) {
-                    error.setContext({
-                        value : valid,
-                        path  : this._hierarchy
-                    });
+                if (error instanceof BaseError) {
+                    if (!error.hasContext) {
+                        error.setContext({
+                            value : valid,
+                            path  : this._hierarchy
+                        });
+                    }
+
+                    errors.push(error);
+                    break;
                 }
 
-                errors.push(error);
-                break;
+                throw error;
             }
         }
 
         if (errors.length > 0) {
+            if (this.isNested) {
+                return this._sendNestedErrors(errors);
+            }
+
             throw new ValidationError(this._cottus, errors);
+        }
+
+        if (this.nestedErrors.length > 0) {
+            throw new ValidationError(this._cottus, this.nestedErrors);
         }
 
         return valid;

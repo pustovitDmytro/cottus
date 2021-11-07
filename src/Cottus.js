@@ -6,8 +6,8 @@ export default class Cottus {
         this.addRules(conf.rules || []);
     }
 
-    compile(schema, hierarchy = []) {
-        const validator = new Validator(this, schema, hierarchy);
+    compile(schema, parentContext) {
+        const validator = new Validator(this, schema, parentContext);
 
         validator.parse();
 

@@ -82,7 +82,7 @@ test('Negative: invalid hierarchy on middle level', async function () {
 test('Negative: invalid hierarchy on deep level', async function () {
     const wrongHierarhy = {
         ...userData,
-        contacts : [ invalidContact, validContact, invalidContact ]
+        contacts : [ validContact, invalidContact ]
     };
     const validator = cottus.compile(complexHierarhyRule);
     const error = ensureError(() => validator.validate(wrongHierarhy));
@@ -95,9 +95,48 @@ test('Negative: invalid hierarchy on deep level', async function () {
                 'code'    : 'REQUIRED',
                 'message' : 'The value is required',
                 'value'   : null,
-                'path'    : [ 'contacts', 0, 'type' ]
+                'path'    : [ 'contacts', 1, 'type' ]
             }
         ]
     });
 });
 
+
+test('Negative: handle simultanious errors', async function () {
+    const wrongHierarhy = {
+        contacts : [ invalidContact, validContact, invalidContact ]
+    };
+    const validator = cottus.compile(complexHierarhyRule);
+    const error = ensureError(() => validator.validate(wrongHierarhy));
+
+    assert.isTrue(error.isValidationError, error.toString());
+    assert.deepEqual(error.hash, {
+        code    : 'VALIDATION_ERROR',
+        details : [
+            {
+                'code'    : 'REQUIRED',
+                'message' : 'The value is required',
+                'path'    : [ 'id' ],
+                'value'   : undefined
+            },
+            {
+                'code'    : 'REQUIRED',
+                'message' : 'The value is required',
+                'path'    : [ 'name' ],
+                'value'   : undefined
+            },
+            {
+                'code'    : 'REQUIRED',
+                'message' : 'The value is required',
+                'value'   : null,
+                'path'    : [ 'contacts', 0, 'type' ]
+            },
+            {
+                'code'    : 'REQUIRED',
+                'message' : 'The value is required',
+                'value'   : null,
+                'path'    : [ 'contacts', 2, 'type' ]
+            }
+        ]
+    });
+});

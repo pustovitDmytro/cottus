@@ -1,11 +1,14 @@
 export default class BaseRule {
-    constructor({ cottus, params, hierarchy }) {
-        this.cottus = cottus;
+    constructor({ params, validator }) {
+        this.validator = validator;
+        this.cottus = this.validator._cottus;
         this.params = params;
-        this.hierarchy = hierarchy;
     }
 
     createNestedValidator(schema, key) {
-        return this.cottus.compile(schema, [ ...this.hierarchy, key ]);
+        return this.cottus.compile(
+            schema,
+            { parent: this.validator, key }
+        );
     }
 }
