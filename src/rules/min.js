@@ -12,19 +12,19 @@ export default class MinRule extends Base {
         const threshold = this.params;
 
         if (isNumber(input)) {
-            if (input < threshold) throw new TOO_LOW();
+            if (input < threshold) throw new TOO_LOW(threshold);
 
             return input;
         }
 
         if (isString(input)) {
-            if (input.length < threshold) throw new TOO_SHORT();
+            if (input.length < threshold) throw new TOO_SHORT(threshold);
 
             return input;
         }
 
         if (isArray(input)) {
-            if (input.length < threshold) throw new TOO_SHORT();
+            if (input.length < threshold) throw new TOO_SHORT(threshold);
 
             return input;
         }

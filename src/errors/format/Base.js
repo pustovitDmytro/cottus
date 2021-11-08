@@ -6,12 +6,16 @@ export default class CottusFormatError extends Error {
     }
 
     get hash() {
-        return {
+        const hash = {
             value   : this.value,
             path    : this.path,
             code    : this.code,
             message : this.message
         };
+
+        if (this.params) hash.payload = this.params;
+
+        return hash;
     }
 
     setContext({ value, path }) {

@@ -32,20 +32,22 @@ export class RuleTester {
         assert.deepEqual(result, output);
     }
 
-    negative(input, code, message) {
+    negative(input, code, message, payload) {
         const error = ensureError(
             () => this._validator.validate(input)
         );
 
         if (!(error instanceof this._ValidationError)) throw error;
-        const json = error.hash;
+        const hash = error.hash.details[0];
 
-        assert.deepEqual(json.details[0], {
+        assert.deepOwnInclude(hash, {
             code,
             message,
             path  : [],
             value : input
         });
+
+        if (payload) assert.deepEqual(hash.payload, payload, 'payload');
     }
 }
 
