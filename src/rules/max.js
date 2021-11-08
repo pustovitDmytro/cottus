@@ -12,19 +12,19 @@ export default class MaxRule extends Base {
         const threshold = this.params;
 
         if (isNumber(input)) {
-            if (input > threshold) throw new TOO_HIGH();
+            if (input > threshold) throw new TOO_HIGH(threshold);
 
             return input;
         }
 
         if (isString(input)) {
-            if (input.length > threshold) throw new TOO_LONG();
+            if (input.length > threshold) throw new TOO_LONG(threshold);
 
             return input;
         }
 
         if (isArray(input)) {
-            if (input.length > threshold) throw new TOO_LONG();
+            if (input.length > threshold) throw new TOO_LONG(threshold);
 
             return input;
         }
