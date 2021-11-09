@@ -1,6 +1,6 @@
 {
   "name": "cottus",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "boilerplate for creating npm packages",
   "main": "./lib",
   "scripts": {
