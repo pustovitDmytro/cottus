@@ -8,6 +8,7 @@ suite('Rules: url');
 test('Positive: url', function () {
     tester.positive('https://ec.ne/capih', new URL('https://ec.ne/capih'));
     tester.positive('http://localhost:60606',  new URL('http://localhost:60606'));
+    tester.positive('https://測試',  new URL('https://測試'));
 });
 
 test('Positive: empty value', function () {
