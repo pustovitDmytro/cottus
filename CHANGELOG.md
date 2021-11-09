@@ -1,3 +1,13 @@
+# [1.3.0](https://github.com/pustovitDmytro/cottus/compare/v1.2.0...v1.3.0) (2021-11-08)
+
+
+### New
+
+* adds 'string' rule. #10 ([c2a400e](https://github.com/pustovitDmytro/cottus/commit/c2a400eb6edca9426a3264c50e02acb8e56e44cd)), closes [#10](https://github.com/pustovitDmytro/cottus/issues/10)
+* adds limits to max rule ([ccc019c](https://github.com/pustovitDmytro/cottus/commit/ccc019c3a03349767689df744a6486d43dd6364c))
+* adds limits to min rule ([9144d65](https://github.com/pustovitDmytro/cottus/commit/9144d65d62bc34a787e0e33215dff75bd490eab5))
+* adds port rule. #10 ([3baf238](https://github.com/pustovitDmytro/cottus/commit/3baf238208220b1ef679889a012a0d6444c65402)), closes [#10](https://github.com/pustovitDmytro/cottus/issues/10)
+
 # [1.2.0](https://github.com/pustovitDmytro/cottus/compare/v1.1.0...v1.2.0) (2021-11-07)
 
 
