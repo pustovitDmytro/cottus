@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/pustovitDmytro/cottus/compare/v1.3.0...v1.4.0) (2021-11-09)
+
+
+### New
+
+* adds 'encryptionKey' and 'base64' rules. #10 ([bb23357](https://github.com/pustovitDmytro/cottus/commit/bb233577853f60db52e372961e72507b5c2719e3)), closes [#10](https://github.com/pustovitDmytro/cottus/issues/10)
+
 # [1.3.0](https://github.com/pustovitDmytro/cottus/compare/v1.2.0...v1.3.0) (2021-11-08)
 
 
