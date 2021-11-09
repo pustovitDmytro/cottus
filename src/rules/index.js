@@ -9,6 +9,7 @@ import max from './max';
 import string from './string';
 import base64 from './base64';
 import encryptionKey from './encryptionKey';
+import boolean from './boolean';
 
 export default [
     required,
@@ -16,5 +17,6 @@ export default [
     attributes, every,
     min, max,
     string,
-    base64, encryptionKey
+    base64, encryptionKey,
+    boolean
 ];

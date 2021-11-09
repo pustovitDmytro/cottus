@@ -14,6 +14,7 @@ import NOT_BASE64        from './format/NOT_BASE64';
 import ILLEGAL_PATH      from './format/ILLEGAL_PATH';
 import INVALID_URL       from './format/INVALID_URL';
 import INVALID_HOST      from './format/INVALID_HOST';
+import NOT_BOOLEAN       from './format/NOT_BOOLEAN';
 
 import BAD_ENCRYPTION_HEADER from './format/BAD_ENCRYPTION_HEADER';
 import BAD_ENCRYPTION_FOOTER from './format/BAD_ENCRYPTION_FOOTER';
@@ -35,6 +36,7 @@ export {
     ILLEGAL_PATH,
     INVALID_URL,
     INVALID_HOST,
+    NOT_BOOLEAN,
 
     BAD_ENCRYPTION_HEADER,
     BAD_ENCRYPTION_FOOTER
