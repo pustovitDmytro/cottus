@@ -7,11 +7,14 @@ import number from './number';
 import min from './min';
 import max from './max';
 import string from './string';
+import base64 from './base64';
+import encryptionKey from './encryptionKey';
 
 export default [
     required,
     port, integer, number,
     attributes, every,
     min, max,
-    string
+    string,
+    base64, encryptionKey
 ];

@@ -26,10 +26,10 @@ export class RuleTester {
         this._ValidationError = ValidationError;
     }
 
-    positive(input, output) {
+    positive(input, output, msg) {
         const result = this._validator.validate(input);
 
-        assert.deepEqual(result, output);
+        assert.deepEqual(result, output, msg);
     }
 
     negative(input, code, message, payload) {

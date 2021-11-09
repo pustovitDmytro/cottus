@@ -10,6 +10,10 @@ import TOO_SHORT         from './format/TOO_SHORT';
 import TOO_LONG          from './format/TOO_LONG';
 import TOO_HIGH          from './format/TOO_HIGH';
 import NOT_STRING        from './format/NOT_STRING';
+import NOT_BASE64        from './format/NOT_BASE64';
+
+import BAD_ENCRYPTION_HEADER from './format/BAD_ENCRYPTION_HEADER';
+import BAD_ENCRYPTION_FOOTER from './format/BAD_ENCRYPTION_FOOTER';
 
 export {
     REQUIRED,
@@ -23,5 +27,9 @@ export {
     TOO_SHORT,
     TOO_LONG,
     TOO_HIGH,
-    NOT_STRING
+    NOT_STRING,
+    NOT_BASE64,
+
+    BAD_ENCRYPTION_HEADER,
+    BAD_ENCRYPTION_FOOTER
 };
