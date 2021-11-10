@@ -1,3 +1,12 @@
+# [1.5.0](https://github.com/pustovitDmytro/cottus/compare/v1.4.0...v1.5.0) (2021-11-09)
+
+
+### New
+
+* adds  rule. #10 ([c95bd31](https://github.com/pustovitDmytro/cottus/commit/c95bd31fec291ea2b0d830af377abe60b860879f)), closes [#10](https://github.com/pustovitDmytro/cottus/issues/10)
+* adds `hostname` rule. #10 ([f8a4bda](https://github.com/pustovitDmytro/cottus/commit/f8a4bda1bd147b6a47e7a1d22513092627bb06cb)), closes [#10](https://github.com/pustovitDmytro/cottus/issues/10)
+* adds `path` rule. #10 ([9b6fbd4](https://github.com/pustovitDmytro/cottus/commit/9b6fbd438fbe5800847af51cda482e66c8c3e843)), closes [#10](https://github.com/pustovitDmytro/cottus/issues/10)
+
 # [1.4.0](https://github.com/pustovitDmytro/cottus/compare/v1.3.0...v1.4.0) (2021-11-09)
 
 
