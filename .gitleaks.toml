@@ -62,6 +62,8 @@ title = "gitleaks config"
     description = "Asymmetric Private Key"
     regex = '''-----BEGIN ((EC|PGP|DSA|RSA|OPENSSH) )?PRIVATE KEY( BLOCK)?-----'''
     tags = ["key", "AsymmetricPrivateKey"]
+    [rules.allowlist]
+        paths = [ "tests/rules/encryptionKey.test.js" ]
 [[rules]]
     description = "Google API key"
     regex = '''AIza[0-9A-Za-z\\-_]{35}'''
