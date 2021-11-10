@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/pustovitDmytro/cottus/compare/v1.5.0...v1.6.0) (2021-11-10)
+
+
+### Chore
+
+* skip encryptionKey.test.js from gitleaks ([205d289](https://github.com/pustovitDmytro/cottus/commit/205d2899b2dd6ac1ad40d960d8a35593411a5171))
+
+### New
+
+* adds `boolean` rule. #10 ([c031999](https://github.com/pustovitDmytro/cottus/commit/c0319994e315da7a90b68060059d047c5367a7f4)), closes [#10](https://github.com/pustovitDmytro/cottus/issues/10)
+* adds `email` rule ([d2e0a19](https://github.com/pustovitDmytro/cottus/commit/d2e0a19b194868767a064e0167309f2a84ef3602))
+
 # [1.5.0](https://github.com/pustovitDmytro/cottus/compare/v1.4.0...v1.5.0) (2021-11-09)
 
 
