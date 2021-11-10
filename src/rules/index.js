@@ -10,6 +10,7 @@ import string from './string';
 import base64 from './base64';
 import encryptionKey from './encryptionKey';
 import boolean from './boolean';
+import email from './email';
 
 export default [
     required,
@@ -18,5 +19,6 @@ export default [
     min, max,
     string,
     base64, encryptionKey,
-    boolean
+    boolean,
+    email
 ];

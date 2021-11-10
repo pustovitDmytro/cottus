@@ -34,7 +34,8 @@ export class RuleTester {
 
     negative(input, code, message, payload) {
         const error = ensureError(
-            () => this._validator.validate(input)
+            () => this._validator.validate(input),
+            input
         );
 
         if (!(error instanceof this._ValidationError)) throw error;
@@ -52,10 +53,10 @@ export class RuleTester {
 }
 
 
-export function ensureError(handler) {
+export function ensureError(handler, msg) {
     try {
         handler();
-        assert.fail(`Expected ${handler.toString()} to throw an error`);
+        assert.fail(`Expected ${handler.toString()} to throw an error ${msg}`);
     } catch (error)  {
         if (error.name === 'AssertionError') throw error;
 

@@ -21,9 +21,7 @@ export default class EncryptionKeyRule extends Base {
         if (!header.startsWith('-----BEGIN') || !header.endsWith('KEY-----')) throw new BAD_ENCRYPTION_HEADER();
         if (!footer.startsWith('-----END') || !footer.endsWith('KEY-----')) throw new BAD_ENCRYPTION_FOOTER();
 
-        // eslint-disable-next-line no-magic-numbers
         const base64Part = lines.slice(1,  -2).join('');
-
         const base64Rule = this.createChildRule(Base64Rule);
 
         base64Rule.validate(base64Part);

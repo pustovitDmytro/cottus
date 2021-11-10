@@ -3,19 +3,16 @@
         "incredible"
     ],
     "rules": {
-        "lines-between-class-members": [ 0, { "exceptAfterSingleLine": true } ]
+        "lines-between-class-members": [ 0, { "exceptAfterSingleLine": true } ],
+        "no-magic-numbers": ["error", { "ignore": [0, 1, 2, 4, -2] }],
+        "unicorn/filename-case" : [ 0 ]
     },
     "overrides": [
         {
-            "files"   : [ "src/errors/format/*.js" ],
-            "rules": {
-                "unicorn/filename-case" : [ 0 ]
-            }
-        }, 
-        {
             "files"   : [ "tests/rules/*test.js" ],
             "rules": {
-                "unicorn/no-useless-undefined": [0]
+                "unicorn/no-useless-undefined": [0],
+                "no-magic-numbers": 0
             }
         }
     ]
