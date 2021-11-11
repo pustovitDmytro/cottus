@@ -13,6 +13,7 @@ import boolean from './boolean';
 import email from './email';
 import uuid from './uuid';
 import enumRule from './enum';
+import defaultValueRule from './default';
 
 export default [
     required,
@@ -24,5 +25,6 @@ export default [
     boolean,
     email,
     uuid,
-    enumRule
+    enumRule,
+    defaultValueRule
 ];
