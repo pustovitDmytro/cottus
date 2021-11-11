@@ -16,6 +16,7 @@ import INVALID_URL       from './format/INVALID_URL';
 import INVALID_HOST      from './format/INVALID_HOST';
 import NOT_BOOLEAN       from './format/NOT_BOOLEAN';
 import WRONG_EMAIL       from './format/WRONG_EMAIL';
+import NOT_UUID          from './format/NOT_UUID';
 
 import BAD_ENCRYPTION_HEADER from './format/BAD_ENCRYPTION_HEADER';
 import BAD_ENCRYPTION_FOOTER from './format/BAD_ENCRYPTION_FOOTER';
@@ -39,6 +40,7 @@ export {
     INVALID_HOST,
     NOT_BOOLEAN,
     WRONG_EMAIL,
+    NOT_UUID,
 
     BAD_ENCRYPTION_HEADER,
     BAD_ENCRYPTION_FOOTER
