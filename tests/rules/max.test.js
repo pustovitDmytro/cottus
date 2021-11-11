@@ -23,6 +23,13 @@ test('Positive: string', function () {
     tester.positive('-123', '-123');
 });
 
+test('Positive: array', function () {
+    const tester = new RuleTester([ { 'max': 20 } ]);
+
+    tester.positive([ 'abc' ], [ 'abc' ]);
+    tester.positive([], []);
+});
+
 test('Negative: numbers', function () {
     const tester = new RuleTester([ 'number', { 'max': 6 } ]);
 
@@ -34,4 +41,16 @@ test('Negative: string', function () {
     const tester = new RuleTester([ 'string', { 'max': 3 } ]);
 
     tester.negative('abd1', 'TOO_LONG', 'The value is longer than the limit', { limit: 3 });
+});
+
+test('Negative: array', function () {
+    const tester = new RuleTester([ { 'max': 1 } ]);
+
+    tester.negative([ 1, 2, 3, 4 ], 'TOO_LONG', 'The value is longer than the limit', { limit: 1 });
+});
+
+test('Negative: bad format', function () {
+    const tester = new RuleTester([ { 'max': 5 } ]);
+
+    tester.negative(false, 'WRONG_FORMAT', 'Format not supported');
 });

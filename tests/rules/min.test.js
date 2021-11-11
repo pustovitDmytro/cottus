@@ -23,6 +23,12 @@ test('Positive: string', function () {
     tester.positive('-123', '-123');
 });
 
+test('Positive: array', function () {
+    const tester = new RuleTester([ { 'min': 2 } ]);
+
+    tester.positive([ 0, 1, 2, 3 ], [ 0, 1, 2, 3 ]);
+});
+
 test('Negative: numbers', function () {
     const tester = new RuleTester([ 'number', { 'min': 3 } ]);
 
@@ -35,4 +41,17 @@ test('Negative: string', function () {
 
     tester.negative('abd', 'TOO_SHORT', 'The value is shorter than the limit', { limit: 5 });
     tester.negative('', 'TOO_SHORT', 'The value is shorter than the limit', { limit: 5 });
+});
+
+test('Negative: array', function () {
+    const tester = new RuleTester([ { 'min': 5 } ]);
+
+    tester.negative([ 1, 2 ], 'TOO_SHORT', 'The value is shorter than the limit', { limit: 5 });
+    tester.negative([], 'TOO_SHORT', 'The value is shorter than the limit', { limit: 5 });
+});
+
+test('Negative: bad format', function () {
+    const tester = new RuleTester([ { 'min': 5 } ]);
+
+    tester.negative(false, 'WRONG_FORMAT', 'Format not supported');
 });
