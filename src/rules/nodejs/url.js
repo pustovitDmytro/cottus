@@ -13,8 +13,7 @@ export default class URLRule extends Base {
         try {
             return new URL(string);
         } catch (error) {
-            if (error.code === 'ERR_INVALID_URL') throw new INVALID_URL();
-            throw error;
+            throw new INVALID_URL(error.code);
         }
     }
 }

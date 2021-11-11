@@ -12,6 +12,7 @@ import encryptionKey from './encryptionKey';
 import boolean from './boolean';
 import email from './email';
 import uuid from './uuid';
+import enumRule from './enum';
 
 export default [
     required,
@@ -22,5 +23,6 @@ export default [
     base64, encryptionKey,
     boolean,
     email,
-    uuid
+    uuid,
+    enumRule
 ];
