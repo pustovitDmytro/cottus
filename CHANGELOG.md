@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/pustovitDmytro/cottus/compare/v1.6.0...v1.7.0) (2021-11-11)
+
+
+### New
+
+* adds `uuid` rule. #10 ([b1dd815](https://github.com/pustovitDmytro/cottus/commit/b1dd8153e781707e08dcd4028261547c70387a45)), closes [#10](https://github.com/pustovitDmytro/cottus/issues/10)
+
 # [1.6.0](https://github.com/pustovitDmytro/cottus/compare/v1.5.0...v1.6.0) (2021-11-10)
 
 
