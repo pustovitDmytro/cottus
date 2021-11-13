@@ -1,3 +1,4 @@
+import { toArray } from 'myrmidon';
 import Validator from './Validator';
 
 export default class Cottus {
@@ -15,7 +16,9 @@ export default class Cottus {
     }
 
     addRules(rules) {
-        rules.forEach(rule => this.rules[rule.schema] = rule);
+        rules.forEach(rule => {
+            toArray(rule.schema).forEach(schemaKey => this.rules[schemaKey] = rule);
+        });
     }
 
     addRule(rule) {

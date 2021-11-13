@@ -9,7 +9,7 @@ import StringRule from './string';
 import Base from './Base';
 
 export default class EncryptionKeyRule extends Base {
-    static schema = 'encryption_key';
+    static schema = [ 'encryption_key', 'encryptionKey' ];
     validate(input) {
         const stringRule = this.createChildRule(StringRule);
         const string = stringRule.validate(input);

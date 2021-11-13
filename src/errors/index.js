@@ -18,6 +18,7 @@ import NOT_BOOLEAN       from './format/NOT_BOOLEAN';
 import WRONG_EMAIL       from './format/WRONG_EMAIL';
 import NOT_UUID          from './format/NOT_UUID';
 import NOT_ALLOWED_VALUE from './format/NOT_ALLOWED_VALUE';
+import WRONG_TIME_UNIT   from './format/WRONG_TIME_UNIT';
 
 import BAD_ENCRYPTION_HEADER from './format/BAD_ENCRYPTION_HEADER';
 import BAD_ENCRYPTION_FOOTER from './format/BAD_ENCRYPTION_FOOTER';
@@ -43,6 +44,7 @@ export {
     WRONG_EMAIL,
     NOT_UUID,
     NOT_ALLOWED_VALUE,
+    WRONG_TIME_UNIT,
 
     BAD_ENCRYPTION_HEADER,
     BAD_ENCRYPTION_FOOTER

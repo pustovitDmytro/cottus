@@ -11,7 +11,7 @@
         {
             "files"   : [ "tests/rules/*test.js" ],
             "rules": {
-                "unicorn/no-useless-undefined": [0],
+                "unicorn/no-useless-undefined": 0,
                 "no-magic-numbers": 0
             }
         }

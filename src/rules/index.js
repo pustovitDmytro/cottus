@@ -14,6 +14,7 @@ import email from './email';
 import uuid from './uuid';
 import enumRule from './enum';
 import defaultValueRule from './default';
+import timeUnit from './timeUnit';
 
 export default [
     required,
@@ -26,5 +27,6 @@ export default [
     email,
     uuid,
     enumRule,
-    defaultValueRule
+    defaultValueRule,
+    timeUnit
 ];
