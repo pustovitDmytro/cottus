@@ -1,3 +1,15 @@
+# [1.8.0](https://github.com/pustovitDmytro/cottus/compare/v1.7.0...v1.8.0) (2021-11-11)
+
+
+### Chore
+
+* adds more `min`/`max` tests ([6d3d14d](https://github.com/pustovitDmytro/cottus/commit/6d3d14d5519975f5284a6d8d262741fc4601b3b5))
+
+### New
+
+* adds `default` rule. #10 ([0584d71](https://github.com/pustovitDmytro/cottus/commit/0584d713e1d8a2980eb0999ccf19afd921ff5623)), closes [#10](https://github.com/pustovitDmytro/cottus/issues/10)
+* adds `enum` rule. #10 ([d0a96b5](https://github.com/pustovitDmytro/cottus/commit/d0a96b5772bf077cee8f78f564c0e13dc77f7e84)), closes [#10](https://github.com/pustovitDmytro/cottus/issues/10)
+
 # [1.7.0](https://github.com/pustovitDmytro/cottus/compare/v1.6.0...v1.7.0) (2021-11-11)
 
 
