@@ -1,3 +1,11 @@
+# [1.9.0](https://github.com/pustovitDmytro/cottus/compare/v1.8.0...v1.9.0) (2021-11-14)
+
+
+### New
+
+* adds `cron` rule. Closes #10 ([f1125ef](https://github.com/pustovitDmytro/cottus/commit/f1125efe957889f41086a3e59783daf409cac9e0)), closes [#10](https://github.com/pustovitDmytro/cottus/issues/10)
+* adds `time_unit` rule. #10 ([8f39640](https://github.com/pustovitDmytro/cottus/commit/8f396402beed2c01b0a5f6fe89942a42580585bd)), closes [#10](https://github.com/pustovitDmytro/cottus/issues/10)
+
 # [1.8.0](https://github.com/pustovitDmytro/cottus/compare/v1.7.0...v1.8.0) (2021-11-11)
 
 
