@@ -9,6 +9,12 @@
     },
     "overrides": [
         {
+            "files"   : [ "src/**/*.js" ],
+            "rules": {
+                "no-console": 2
+            }
+        },
+        {
             "files"   : [ "tests/rules/*test.js" ],
             "rules": {
                 "unicorn/no-useless-undefined": 0,

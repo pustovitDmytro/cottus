@@ -10,7 +10,14 @@ export default class BaseRule {
     createNestedValidator(schema, key) {
         return this.cottus.compile(
             schema,
-            isValue(key) && { parent: this.validator, key }
+            { parent: this.validator, key }
+        );
+    }
+
+    createValidator(schema) {
+        return this.cottus.compile(
+            schema,
+            { parent: this.validator, notLink: true }
         );
     }
 
@@ -27,7 +34,7 @@ export default class BaseRule {
         if (skip) return input;
         try {
             if (this.alias) {
-                const aliasValidator = this.createNestedValidator(this.alias);
+                const aliasValidator = this.createValidator(this.alias);
 
                 return aliasValidator.validate(input);
             }

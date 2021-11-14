@@ -15,6 +15,9 @@ import uuid from './uuid';
 import enumRule from './enum';
 import defaultValueRule from './default';
 import timeUnit from './timeUnit';
+import cron from './cron';
+import or from './or';
+import toLower from './toLower';
 
 export default [
     required,
@@ -28,5 +31,8 @@ export default [
     uuid,
     enumRule,
     defaultValueRule,
-    timeUnit
+    timeUnit,
+    cron,
+    or,
+    toLower
 ];

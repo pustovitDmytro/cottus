@@ -1,4 +1,5 @@
 import path from 'path';
+import { inspect } from 'util';
 import { assert } from 'chai';
 import { entry } from './constants';
 
@@ -46,7 +47,7 @@ export class RuleTester {
             message,
             path  : [],
             value : input
-        });
+        }, inspect(input));
 
         if (payload) assert.deepEqual(hash.payload, payload, 'payload');
     }

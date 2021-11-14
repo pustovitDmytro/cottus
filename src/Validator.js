@@ -1,7 +1,8 @@
 import {
     toArray,
     isString,
-    isObject
+    isObject,
+    isValue
 } from 'myrmidon';
 import BaseError from './errors/format/Base';
 import ValidationError from './errors/ValidationError';
@@ -13,12 +14,18 @@ export default class Validator {
         this._hierarchy = [];
         if (parentContext) {
             this._hierarchy = parentContext.parent._nestedHierarhy(parentContext.key);
-            this.parent = parentContext.parent;
+            if (!parentContext.notLink) {
+                this.parent = parentContext.parent;
+            }
         }
     }
 
     _nestedHierarhy(key) {
-        return [ ...this._hierarchy, key ];
+        const nested =  [ ...this._hierarchy ];
+
+        if (isValue(key)) nested.push(key);
+
+        return nested;
     }
 
     get isNested() {

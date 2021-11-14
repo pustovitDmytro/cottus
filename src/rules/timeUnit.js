@@ -48,7 +48,7 @@ const UNITS = [
         multiplier : MS_IN_YEAR
     },
     {
-        words      : [ 'months', 'month', 'mnth' ],
+        words      : [ 'months', 'month', 'mnth', 'mo', 'm’th', 'm-th', 'mth' ],
         multiplier : MS_IN_MONTH
     },
     {
