@@ -1,5 +1,6 @@
 # cottus
-Boilerplate for creating npm packages.
+
+Customizable JavaScript data validator. 
 
 [![Version][badge-vers]][npm]
 [![Bundle size][npm-size-badge]][npm-size-url]
@@ -22,10 +23,30 @@ Boilerplate for creating npm packages.
 [![License][badge-lic]][github]
 
 ## Table of Contents
+  - [Features](#features)
+  - [Motivation](#motivation)
   - [Requirements](#requirements)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Contribute](#contribute)
+
+## Features
+- [x] Free of complex regexes
+- [x] All schemas described as serializable objects
+- [x] Easy to extend with own rules
+- [x] Supports complex hierarchical structures
+
+Coming soon:
+- [ ] References. [issue #11][i11]
+- [ ] Async rules support. [issue #13][i13]
+
+## Motivation
+
+There are several nice validators in the JS world ([livr][npm-livr], [joi][npm-joi]), but no one satisfied all my needs entirely. 
+
+Another big question here is why not just use [regular expressions][RegExp]? Regexp is an undoubtedly powerful tool, but has its own cons. I am completely tired of searching for valid regexp for any standard validation task. Most of them need almost [scientific paper][regexp-email] to describe patterns. They are totally unpredictable when faced with arbitrary inputs, hard to maintain, debug and explain.
+
+So, that is another JS validator, describing my view for the modern validation process. 
 
 ## Requirements
 [![Platform Status][appveyor-badge]][appveyor-url]
@@ -47,9 +68,79 @@ To install the library run the following command
 
 ## Usage
 
+Commonly usage is a two steps process:
+  1. Constructing validator from a schema
+  2. Running validator on arbitrary input.
+
 ```javascript
+import cottus from 'cottus';
+
+const validator = cottus.compile([
+    'required', { 'attributes' : {
+        'id'       : [ 'required', 'uuid' ],
+        'name'     : [ 'string', { 'min': 3 }, { 'max': 256 } ],
+        'email'    : [ 'required', 'email' ],
+        'contacts' : [ { 'every' : {
+            'attributes' : {
+                'type' : [
+                    'required',
+                    { 'enum': [ 'phone', 'facebook' ] }
+                ],
+                'value' : [ 'required', 'string' ]
+            }
+        } } ]
+    } }
+]);
+
+try {
+    const valid = validator.validate(rawUserData);
+
+    console.log('Data is valid:', valid);
+} catch (error) {
+    console.error('Validation Failed:', error);
+}
 
 ```
+
+### Errors
+`CottusValidationError` would be returned in case of validation failure.
+
+There are 2 ways of identifying this error: 
+
+1. **recommended**: verify the affiliation to the class:
+   
+  ```javascript
+  import { ValidationError } from 'cottus';
+  
+  if (error instanceof ValidationError) {
+      console.error(error.prettify);
+  }
+  ``` 
+2. *soft way*: check `isValidationError` property:
+  
+  ```javascript
+  try {
+      const valid = validator.validate(rawUserData);
+  
+      console.log('Data is valid:', valid);
+  } catch (error) {
+      if (error.isValidationError) {
+          onsole.error('Validation Failed:', error);
+      }
+  
+      console.error('Unknown error occured:', error);
+  }
+  ``` 
+
+  To get a pretty hierarchical tree with error codes, use:
+  ```javascript
+  console.error(error.prettify);
+  ```
+
+  To get full error data, use: 
+  ```javascript
+  console.error(error.hash);
+  ```
 
 ## Contribute
 
@@ -84,7 +175,7 @@ Make the changes to the code and tests. Then commit to your branch. Be sure to f
 [lgtm-alerts-badge]: https://img.shields.io/lgtm/alerts/g/pustovitDmytro/cottus.svg?logo=lgtm&logoWidth=18
 [lgtm-alerts-url]: https://lgtm.com/projects/g/pustovitDmytro/cottus/alerts/
 
-[codacy-badge]: https://app.codacy.com/project/badge/Grade/8667aa23afaa4725854f098c4b5e8890
+[codacy-badge]: https://app.codacy.com/project/badge/Grade/9ca51e1503df488f92393737a3be2271
 [codacy-url]: https://www.codacy.com/gh/pustovitDmytro/cottus/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pustovitDmytro/cottus&amp;utm_campaign=Badge_Grade
 
 [sonarcloud-badge]: https://sonarcloud.io/api/project_badges/measure?project=pustovitDmytro_cottus&metric=alert_status
@@ -99,3 +190,12 @@ Make the changes to the code and tests. Then commit to your branch. Be sure to f
 
 [fossa-badge]: https://app.fossa.com/api/projects/custom%2B24828%2Fcottus.svg?type=shield
 [fossa-url]: https://app.fossa.com/projects/custom%2B24828%2Fcottus?ref=badge_shield
+
+[i11]: https://github.com/user/repo/issues/11
+[i13]: https://github.com/user/repo/issues/13
+
+[npm-joi]: https://www.npmjs.com/package/joi
+[npm-livr]: https://www.npmjs.com/package/livr
+[regexp-email]: https://www.regular-expressions.info/email.html
+
+[RegExp]: https://en.wikipedia.org/wiki/Regular_expression
