@@ -32,7 +32,12 @@ function isQuotedString(string) {
     return [ ...string.slice(1,  -2) ].some(char => atextRestricted.has(char));
 }
 
-// https://datatracker.ietf.org/doc/html/rfc5322#section-3.4.1
+/**
+ * Checks input to be a valid email address.
+ * @spec https://datatracker.ietf.org/doc/html/rfc5322#section-3.4.1
+ * @depends string
+ * @rule
+ */
 export default class EmailRule extends Base {
     static schema = 'email';
     validate(input) {

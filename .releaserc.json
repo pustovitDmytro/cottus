@@ -17,14 +17,15 @@
         ],
         [
             "@semantic-release/git", {
-                "assets": ["README.md", "CHANGELOG.md", "package.json"],
+                "assets": ["README.md", "CHANGELOG.md", "package.json", "docs"],
                 "message": "Chore: (release) add version ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
             }
         ],
         [
             "@semantic-release/github", {
                 "assets": [
-                    { "path": "*.tgz", "label": "npm tarball" }
+                    { "path": "*.tgz", "label": "npm tarball" },
+                    { "path": [ "docs/**", "README.md", "CHANGELOG.md" ], "label": "Documentation" }
                 ]
             }
         ],

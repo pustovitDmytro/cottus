@@ -1,0 +1,4 @@
+{
+    "entry": [ "src/**/*.js" ],
+    "hooks": ".code-chronicle/hooks.js"
+}
