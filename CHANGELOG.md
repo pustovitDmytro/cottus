@@ -1,3 +1,11 @@
+## [1.9.1](https://github.com/pustovitDmytro/cottus/compare/v1.9.0...v1.9.1) (2021-11-16)
+
+
+### Docs
+
+* adds readme ([cf60088](https://github.com/pustovitDmytro/cottus/commit/cf600886c991a280636ec20079546f0244ced8dc))
+* integrate rules docs with .code-chronicle ([50845d9](https://github.com/pustovitDmytro/cottus/commit/50845d9593732b8f5e171524e09c94f8d5127bf4))
+
 # [1.9.0](https://github.com/pustovitDmytro/cottus/compare/v1.8.0...v1.9.0) (2021-11-14)
 
 
