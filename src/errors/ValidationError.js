@@ -1,23 +1,44 @@
+import { setProp } from '../utils';
+
 export default class CottusValidationError extends Error {
+    #cottus;
+    #errors;
+
     constructor(cottus, errors) {
         super();
         this.name = this.constructor.name;
-        this.cottus = cottus;
-        this.errors = errors;
+        this.#cottus = cottus;
+        this.#errors = errors;
+    }
+
+    get errors() {
+        return this.#errors;
     }
 
     get message() {
-        return `Vaildation Failed: ${this.errors.length} error(s) occured\n${this.prettify}`;
+        return `Vaildation Failed: ${this.#errors.length} error(s) occured\n${this.prettify}`;
     }
 
     get prettify() {
-        return JSON.stringify(this.errors.map(e => e.hash));
+        const prettty = {};
+
+        for (const formatError of this.errors) {
+            const message = `${formatError.code}: ${formatError.message}`;
+
+            setProp(
+                prettty,
+                formatError.path.join('.'),
+                message
+            );
+        }
+
+        return JSON.stringify(prettty, null, 2);
     }
 
     get hash() {
         return {
             code    : 'VALIDATION_ERROR',
-            details : this.errors.map(e => e.hash)
+            details : this.#errors.map(e => e.hash)
         };
     }
 

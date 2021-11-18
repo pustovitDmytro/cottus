@@ -110,6 +110,19 @@ test('Negative: handle simultanious errors', async function () {
     const error = ensureError(() => validator.validate(wrongHierarhy));
 
     assert.isTrue(error.isValidationError, error.toString());
+    assert.deepEqual(JSON.parse(error.prettify), {
+        'id'       : 'REQUIRED: The value is required',
+        'name'     : 'REQUIRED: The value is required',
+        'contacts' : [
+            {
+                'type' : 'REQUIRED: The value is required'
+            },
+            null,
+            {
+                'type' : 'REQUIRED: The value is required'
+            }
+        ]
+    });
     assert.deepEqual(error.hash, {
         code    : 'VALIDATION_ERROR',
         details : [

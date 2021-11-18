@@ -91,3 +91,24 @@ export class Mask {
         }
     }
 }
+
+/* eslint-disable no-param-reassign */
+// TODO: move to myrmidon
+export function setProp(obj, prop, value, { delimiter = '.' } = {}) {
+    let current = obj;
+
+    prop.split(delimiter).forEach((token, index, tokens) => {
+        const isLast = index === tokens.length - 1;
+
+        if (!(token in current)) {
+            if (isLast) return current[token] = value;
+            const nextToken = tokens[index + 1];
+            const isIndex = Number.isInteger(+nextToken);
+
+            current[token] = isIndex ? [] : {};
+        }
+
+        current = current[token];
+    });
+}
+/* eslint-enable no-param-reassign */
