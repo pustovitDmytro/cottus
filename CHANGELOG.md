@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/pustovitDmytro/cottus/compare/v1.9.1...v1.10.0) (2021-11-18)
+
+
+### New
+
+* adds Assembler ([f10e308](https://github.com/pustovitDmytro/cottus/commit/f10e30894e45b9077b66cd2a842492071c8d196d))
+
 ## [1.9.1](https://github.com/pustovitDmytro/cottus/compare/v1.9.0...v1.9.1) (2021-11-16)
 
 
