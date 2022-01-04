@@ -16,7 +16,7 @@ export default class CottusValidationError extends Error {
     }
 
     get message() {
-        return `Vaildation Failed: ${this.#errors.length} error(s) occured\n${this.prettify}`;
+        return `Validation Failed: ${this.#errors.length} error(s) occured\n${this.prettify}`;
     }
 
     get prettify() {
