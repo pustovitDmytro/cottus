@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/pustovitDmytro/cottus/compare/v1.10.0...v1.10.1) (2022-01-04)
+
+
+### Fix
+
+* fixes typo in error ([44b7d04](https://github.com/pustovitDmytro/cottus/commit/44b7d0441fc5ab948ba4bf1be79369254fbbe50f))
+
 # [1.10.0](https://github.com/pustovitDmytro/cottus/compare/v1.9.1...v1.10.0) (2021-11-18)
 
 
