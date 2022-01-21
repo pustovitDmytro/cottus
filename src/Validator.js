@@ -33,7 +33,11 @@ export default class Validator {
     }
 
     _sendNestedErrors(errors) {
-        this.parent._receiveNestedErrors(errors);
+        if (this.isNested) {
+            return this.parent._receiveNestedErrors(errors);
+        }
+
+        this.nestedErrors.push(...errors);
     }
 
     _receiveNestedErrors(errors) {
@@ -69,18 +73,6 @@ export default class Validator {
             }));
         });
     }
-
-    // async function v() {
-    //     const rule = new RequiredRule(params);
-
-    //     try {
-    //         rule.validate(input, context);
-    //     } catch (error) {
-    //         error.setContext(context); // check static
-    //         throw error;
-    //     }
-    // }
-
 
     validate(input) {
         this.nestedErrors = [];

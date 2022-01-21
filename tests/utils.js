@@ -1,6 +1,7 @@
 import path from 'path';
 import { inspect } from 'util';
 import { assert } from 'chai';
+import { isString } from 'myrmidon';
 import { entry } from './constants';
 
 export function load(relPath, clearCache) {
@@ -40,16 +41,19 @@ export class RuleTester {
         );
 
         if (!(error instanceof this._ValidationError)) throw error;
-        const hash = error.hash.details[0];
+        if (!isString(code)) {
+            assert.deepEqual(JSON.parse(error.prettify), code, inspect(input));
+        } else {
+            const hash = error.hash.details[0];
 
-        assert.deepOwnInclude(hash, {
-            code,
-            message,
-            path  : [],
-            value : input
-        }, inspect(input));
-
-        if (payload) assert.deepEqual(hash.payload, payload, 'payload');
+            assert.deepOwnInclude(hash, {
+                code,
+                message,
+                path  : [],
+                value : input
+            }, inspect(input));
+            if (payload) assert.deepEqual(hash.payload, payload, 'payload');
+        }
     }
 }
 

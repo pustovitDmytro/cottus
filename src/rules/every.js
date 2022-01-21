@@ -16,6 +16,6 @@ export default class EveryRule extends Base {
             valid.push(validator.validate(value));
         }
 
-        return input;
+        return valid;
     }
 }

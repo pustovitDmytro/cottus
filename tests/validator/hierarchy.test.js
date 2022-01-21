@@ -101,6 +101,28 @@ test('Negative: invalid hierarchy on deep level', async function () {
     });
 });
 
+test('Negative: error directly after every rule', async function () {
+    const wrongHierarhy = {
+        ...userData,
+        contacts : [ validContact, '500' ]
+    };
+    const validator = cottus.compile(complexHierarhyRule);
+    const error = ensureError(() => validator.validate(wrongHierarhy));
+
+    assert.isTrue(error.isValidationError, error);
+    assert.deepEqual(error.hash, {
+        code    : 'VALIDATION_ERROR',
+        details : [
+            {
+                'code'    : 'NOT_OBJECT',
+                'message' : 'The value have to be plain js object',
+                'value'   : '500',
+                'path'    : [ 'contacts', 1 ]
+            }
+        ]
+    });
+});
+
 
 test('Negative: handle simultanious errors', async function () {
     const wrongHierarhy = {
