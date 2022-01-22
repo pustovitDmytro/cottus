@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/pustovitDmytro/cottus/compare/v1.10.1...v1.10.2) (2022-01-21)
+
+
+### Fix
+
+* `every` rule returns validated values instead inputs ([74e8659](https://github.com/pustovitDmytro/cottus/commit/74e8659cf136da47695ec7767cdb129243ad3de2))
+
 ## [1.10.1](https://github.com/pustovitDmytro/cottus/compare/v1.10.0...v1.10.1) (2022-01-04)
 
 
