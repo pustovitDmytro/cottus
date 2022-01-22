@@ -49,14 +49,14 @@ Another big question here is why not just use [regular expressions][RegExp]? Reg
 So, that is another JS validator, describing my view for the modern validation process. 
 
 ## Requirements
-[![Platform Status][appveyor-badge]][appveyor-url]
+[![Platform Status][node-ver-test-badge]][node-ver-test-url]
 
 To use library you need to have [node](https://nodejs.org) and [npm](https://www.npmjs.com) installed in your machine:
 
 * node `>=10`
 * npm `>=6`
 
-Package is [continuously tested][appveyor-url] on darwin, linux, win32 platforms. All active and maintenance [LTS](https://nodejs.org/en/about/releases/) node releases are supported.
+Package is [continuously tested][node-ver-test-url] on darwin, linux, win32 platforms. All active and maintenance [LTS](https://nodejs.org/en/about/releases/) node releases are supported.
 
 ## Installation
 
@@ -149,7 +149,7 @@ Make the changes to the code and tests. Then commit to your branch. Be sure to f
 [npm]: https://www.npmjs.com/package/cottus
 [github]: https://github.com/pustovitDmytro/cottus
 [coveralls]: https://coveralls.io/github/pustovitDmytro/cottus?branch=master
-[badge-deps]: https://img.shields.io/david/pustovitDmytro/cottus.svg
+[badge-deps]: https://img.shields.io/librariesio/release/npm/cottus.svg
 [badge-vers]: https://img.shields.io/npm/v/cottus.svg
 [badge-lic]: https://img.shields.io/github/license/pustovitDmytro/cottus.svg
 [badge-coverage]: https://coveralls.io/repos/github/pustovitDmytro/cottus/badge.svg?branch=master
@@ -188,8 +188,8 @@ Make the changes to the code and tests. Then commit to your branch. Be sure to f
 [appveyor-badge]: https://ci.appveyor.com/api/projects/status/lik73h3vxd7687pr/branch/master?svg=true
 [appveyor-url]: https://ci.appveyor.com/project/pustovitDmytro/cottus/branch/master
 
-[fossa-badge]: https://app.fossa.com/api/projects/custom%2B24828%2Fcottus.svg?type=shield
-[fossa-url]: https://app.fossa.com/projects/custom%2B24828%2Fcottus?ref=badge_shield
+[node-ver-test-badge]: https://github.com/pustovitDmytro/npm-boilerplate/actions/workflows/npt.yml/badge.svg?branch=master
+[node-ver-test-url]: https://github.com/pustovitDmytro/npm-boilerplate/actions?query=workflow%3A%22Node.js+versions%22
 
 [i11]: https://github.com/user/repo/issues/11
 [i13]: https://github.com/user/repo/issues/13
