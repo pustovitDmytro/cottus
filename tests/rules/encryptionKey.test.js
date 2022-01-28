@@ -5,7 +5,7 @@ import { RuleTester } from '../utils';
 
 const tester = new RuleTester('encryption_key');
 
-suite('Rules: encryptionKey');
+suite('Rules: encryptionKey #no-pack');
 
 const keys = {};
 
