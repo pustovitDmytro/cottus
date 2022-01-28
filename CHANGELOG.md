@@ -1,3 +1,16 @@
+## [1.10.4](https://github.com/pustovitDmytro/cottus/compare/v1.10.3...v1.10.4) (2022-01-28)
+
+
+### Chore
+
+* fixes some npm audit vulnerabilities ([b632291](https://github.com/pustovitDmytro/cottus/commit/b632291195a11346936851bd43b4a66dbdf8e255))
+* fixes some npm audit vulnerabilities (#23) ([07be8a9](https://github.com/pustovitDmytro/cottus/commit/07be8a90cdfacbde7b0e910f63a6c66745da327f)), closes [#23](https://github.com/pustovitDmytro/cottus/issues/23)
+* Lock file maintenance (#12) ([3b54870](https://github.com/pustovitDmytro/cottus/commit/3b54870cca57d8dce239c461c19fad32c6bdd6f3)), closes [#12](https://github.com/pustovitDmytro/cottus/issues/12)
+
+### Docs
+
+* fix fossa badge ([c17b0f6](https://github.com/pustovitDmytro/cottus/commit/c17b0f69f3b2ec633854d263b86e4d5b015bca39))
+
 ## [1.10.3](https://github.com/pustovitDmytro/cottus/compare/v1.10.2...v1.10.3) (2022-01-22)
 
 
