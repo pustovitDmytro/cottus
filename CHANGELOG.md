@@ -1,3 +1,14 @@
+## [1.10.5](https://github.com/pustovitDmytro/cottus/compare/v1.10.4...v1.10.5) (2022-01-28)
+
+
+### Chore
+
+* ignore encryptionKey tests in npt ([cbf40f6](https://github.com/pustovitDmytro/cottus/commit/cbf40f6659e3f3af4f919983baeb3fe856f9f5f5))
+
+### Upgrade
+
+* Update dependency myrmidon to v1.7.2 (#26) ([2eb913a](https://github.com/pustovitDmytro/cottus/commit/2eb913a777434879a2ab39f4fb2caee0b973e8b3)), closes [#26](https://github.com/pustovitDmytro/cottus/issues/26)
+
 ## [1.10.4](https://github.com/pustovitDmytro/cottus/compare/v1.10.3...v1.10.4) (2022-01-28)
 
 
