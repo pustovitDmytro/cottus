@@ -185,11 +185,11 @@ Make the changes to the code and tests. Then commit to your branch. Be sure to f
 [npm-size-badge]: https://img.shields.io/bundlephobia/min/cottus
 [npm-size-url]: https://bundlephobia.com/result?p=cottus
 
-[appveyor-badge]: https://ci.appveyor.com/api/projects/status/lik73h3vxd7687pr/branch/master?svg=true
-[appveyor-url]: https://ci.appveyor.com/project/pustovitDmytro/cottus/branch/master
-
 [node-ver-test-badge]: https://github.com/pustovitDmytro/npm-boilerplate/actions/workflows/npt.yml/badge.svg?branch=master
 [node-ver-test-url]: https://github.com/pustovitDmytro/npm-boilerplate/actions?query=workflow%3A%22Node.js+versions%22
+
+[fossa-badge]: https://app.fossa.com/api/projects/custom%2B24828%2Fcottus.svg?type=shield
+[fossa-url]: https://app.fossa.com/projects/custom%2B24828%2Fcottus?ref=badge_shield
 
 [i11]: https://github.com/user/repo/issues/11
 [i13]: https://github.com/user/repo/issues/13
