@@ -1,3 +1,4 @@
+import path from 'path';
 import { RuleTester } from '../utils';
 
 const tester = new RuleTester('path');
@@ -6,9 +7,9 @@ suite('Rules: path');
 
 test('Positive: path', function () {
     tester.positive('file.js', 'file.js');
-    tester.positive('/tmp//file.js', '/tmp/file.js');
+    tester.positive('/tmp//file.js', path.resolve('/tmp/file.js'));
     tester.positive('./file.js', 'file.js');
-    tester.positive(' /home/user/../file.js     ', '/home/file.js');
+    tester.positive(' /home/user/../file.js     ', path.resolve('/home/file.js'));
 });
 
 test('Positive: empty value', function () {
