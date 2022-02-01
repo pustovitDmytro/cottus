@@ -1,3 +1,15 @@
+## [1.10.6](https://github.com/pustovitDmytro/cottus/compare/v1.10.5...v1.10.6) (2022-02-01)
+
+
+### Chore
+
+* fixes some npm audit vulnerabilities (#27) ([15ef37e](https://github.com/pustovitDmytro/cottus/commit/15ef37eb5ee8036cf67f5f5341425e3eb9378114)), closes [#27](https://github.com/pustovitDmytro/cottus/issues/27)
+* resolve path in tests depending on os. fixes #29 ([bbced33](https://github.com/pustovitDmytro/cottus/commit/bbced33e89883a3f2679e55780699dba5d76a9e0)), closes [#29](https://github.com/pustovitDmytro/cottus/issues/29)
+
+### Docs
+
+* fix npt badge link ([5cf27fc](https://github.com/pustovitDmytro/cottus/commit/5cf27fc3a743d32e79fe0ad6a6c4426588d5bc06))
+
 ## [1.10.5](https://github.com/pustovitDmytro/cottus/compare/v1.10.4...v1.10.5) (2022-01-28)
 
 
