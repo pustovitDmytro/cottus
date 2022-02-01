@@ -7,9 +7,9 @@ suite('Rules: path');
 
 test('Positive: path', function () {
     tester.positive('file.js', 'file.js');
-    tester.positive('/tmp//file.js', path.resolve('/tmp/file.js'));
+    tester.positive('/tmp//file.js', path.normalize('/tmp/file.js'));
     tester.positive('./file.js', 'file.js');
-    tester.positive(' /home/user/../file.js     ', path.resolve('/home/file.js'));
+    tester.positive(' /home/user/../file.js     ', path.normalize('/home/file.js'));
 });
 
 test('Positive: empty value', function () {
