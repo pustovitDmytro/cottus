@@ -49,5 +49,5 @@ export default class BaseRule {
         }
     }
 
-    static isOptional = true
+    static isOptional = true;
 }

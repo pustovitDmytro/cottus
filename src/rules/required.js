@@ -11,5 +11,5 @@ export default class RequiredRule extends Base {
         return input;
     }
 
-    static isOptional = false
+    static isOptional = false;
 }

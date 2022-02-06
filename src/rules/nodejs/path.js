@@ -19,7 +19,7 @@ export default class PathRule extends Base {
             for (const char of part) {
                 const isForbidden = [ ...UNIX_FORBIDDEN_SYMBOLS, ...WINDOWS_FORBIDDEN_SYMBOLS ].includes(char);
 
-                if (isForbidden || isASCII('control', char.charCodeAt(0))) throw new ILLEGAL_PATH();
+                if (isForbidden || isASCII('control', char.codePointAt(0))) throw new ILLEGAL_PATH();
             }
         }
 

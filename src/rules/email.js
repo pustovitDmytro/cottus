@@ -14,7 +14,7 @@ function isDtext(code) {
 
 function isDomAtom(string) {
     return [ ...string ].every((char, i) => {
-        const code = char.charCodeAt(0);
+        const code = char.codePointAt(0);
 
         if (isASCII('numeric', code) || isASCII('upperAlpha', code) || isASCII('lowerAlpha', code)) return true;
         if (atextAllowed.has(char)) return true;
@@ -49,7 +49,7 @@ export default class EmailRule extends Base {
 
         if (!isDomAtom(localPart) && !isQuotedString(localPart)) throw new WRONG_EMAIL('LOCAL-PART');
         // TODO: check ipv4/ipv6 instead isDtext
-        if (!isDomAtom(domain) && ![ ...domain ].every(char => isDtext(char.charCodeAt(0)))) throw new WRONG_EMAIL('DOMAIN-PART');
+        if (!isDomAtom(domain) && ![ ...domain ].every(char => isDtext(char.codePointAt(0)))) throw new WRONG_EMAIL('DOMAIN-PART');
 
         return string;
     }
