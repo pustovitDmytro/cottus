@@ -17,5 +17,5 @@ export default class HostnameRule extends Base {
 
         return string;
     }
-    static defaultError = () => new INVALID_HOST()
+    static defaultError = () => new INVALID_HOST();
 }

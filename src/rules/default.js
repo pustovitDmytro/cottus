@@ -10,5 +10,5 @@ export default class defaultValueRule extends Base {
         return input;
     }
 
-    static isOptional = false
+    static isOptional = false;
 }

@@ -6,7 +6,7 @@ import Base from './Base';
 
 function parse(string) {
     const firstAlpha = [ ...string ].findIndex(char => {
-        const code = char.charCodeAt(0);
+        const code = char.codePointAt(0);
 
         return isASCII('upperAlpha', code) || isASCII('lowerAlpha', code);
     });
