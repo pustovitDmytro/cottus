@@ -1,3 +1,17 @@
+## [1.10.7](https://github.com/pustovitDmytro/cottus/compare/v1.10.6...v1.10.7) (2022-02-28)
+
+
+### Chore
+
+* Lock file maintenance (#30) ([2f03dd7](https://github.com/pustovitDmytro/cottus/commit/2f03dd705b7a209031ffcc13bdb0b54c803dfa30)), closes [#30](https://github.com/pustovitDmytro/cottus/issues/30)
+* replace path.resolve to path.normalize in tests. windows compartibility ([5a21e89](https://github.com/pustovitDmytro/cottus/commit/5a21e89f4edc089e46bfc757b13e7649392a75db))
+* Update devDependencies (non-major) (#16) ([23cadea](https://github.com/pustovitDmytro/cottus/commit/23cadead176d839d751c23e94f01e6d79ae61fc3)), closes [#16](https://github.com/pustovitDmytro/cottus/issues/16)
+* Update devDependencies (non-major) (major) (#17) ([85d5b26](https://github.com/pustovitDmytro/cottus/commit/85d5b266b2c736c289933e56f56197051b65cb22)), closes [#17](https://github.com/pustovitDmytro/cottus/issues/17)
+
+### Docs
+
+* help Ukraine 🇺🇦 ([e46e3aa](https://github.com/pustovitDmytro/cottus/commit/e46e3aaf83920d83050ed754433237e394738702))
+
 ## [1.10.6](https://github.com/pustovitDmytro/cottus/compare/v1.10.5...v1.10.6) (2022-02-01)
 
 

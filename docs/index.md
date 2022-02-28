@@ -8,4 +8,4 @@ Checks input to be a valid email address.
 
 **Note!** The `string` rule is checked before running validation.
 
-[Source](https://github.com/pustovitDmytro/cottus.git/blob/bbced33e89883a3f2679e55780699dba5d76a9e0/src/rules/email.js#L41)
+[Source](https://github.com/pustovitDmytro/cottus.git/blob/e46e3aaf83920d83050ed754433237e394738702/src/rules/email.js#L41)
