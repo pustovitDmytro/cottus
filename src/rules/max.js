@@ -6,6 +6,15 @@ import {
 } from '../errors';
 import Base from './Base';
 
+/**
+ * Checks value to be less than threshold.
+ * @param {integer} threshold max possible value
+ * @error TOO_HIGH
+ * @error TOO_LONG
+ * @error WRONG_FORMAT
+ * @returns {any} valid string, number or array
+ * @rule
+ */
 export default class MaxRule extends Base {
     static schema = 'max';
     validate(input) {

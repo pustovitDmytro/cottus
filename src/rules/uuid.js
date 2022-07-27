@@ -13,6 +13,13 @@ const hexFormatters = {
 
 const mask = new Mask('ffffffff-ffff-vfff-ffff-ffffffffffff', hexFormatters);
 
+/**
+ * Checks value to be a uuid v4.
+ * @depends string
+ * @error NOT_UUID
+ * @returns {string} valid input
+ * @rule
+ */
 export default class UUIDRule extends Base {
     static schema = 'uuid';
     validate(input) {

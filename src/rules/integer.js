@@ -2,6 +2,13 @@ import { NOT_INTEGER } from '../errors';
 import NumberRule from './number';
 import Base from './Base';
 
+/**
+ * Checks value to be an integer.
+ * @depends number
+ * @error NOT_INTEGER
+ * @returns {integer} valid integer
+ * @rule
+ */
 export default class IntegerRule extends Base {
     static schema = 'integer';
     validate(input) {

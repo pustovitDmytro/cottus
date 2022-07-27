@@ -84,6 +84,14 @@ function calc(amount, unitKey) {
     return amount * unit.multiplier;
 }
 
+/**
+ * Checks value to be a time unit.
+ * @depends number
+ * @error WRONG_TIME_UNIT
+ * @error WRONG_FORMAT
+ * @returns {integer} time in miliseconds
+ * @rule
+ */
 export default class TimeUnitRule extends Base {
     static schema = [ 'time_unit', 'timeUnit' ];
     validate(input) {
