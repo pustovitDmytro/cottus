@@ -1,3 +1,15 @@
+## [1.10.8](https://github.com/pustovitDmytro/cottus/compare/v1.10.7...v1.10.8) (2022-07-27)
+
+
+### Chore
+
+* fixes test:package ([49e47e0](https://github.com/pustovitDmytro/cottus/commit/49e47e0b90e582f04eab6616facbd90e70b4b466))
+
+### Docs
+
+* adds extra documentation ([52cb6eb](https://github.com/pustovitDmytro/cottus/commit/52cb6ebe8360925ab2c4b1a4d106e9f5e8971853))
+* ads basic documentation ([88c37fc](https://github.com/pustovitDmytro/cottus/commit/88c37fc03a5753c03d50cbb990a5061dea7c9e60))
+
 ## [1.10.7](https://github.com/pustovitDmytro/cottus/compare/v1.10.6...v1.10.7) (2022-02-28)
 
 
