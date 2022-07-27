@@ -1,4 +1,5 @@
 {
     "dir": "tmp/package-tests",
+    "modules": [ "code-chronicle" ],
     "copyDefaultFiles": true
 }
