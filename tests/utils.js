@@ -2,7 +2,29 @@ import path from 'path';
 import { inspect } from 'util';
 import { assert } from 'chai';
 import { isString } from 'myrmidon';
+import  { Mocha } from 'code-chronicle';
 import { entry } from './constants';
+
+let mocha = null;
+
+if (process.env.SAVE_EXAMPLES) {
+    mocha = new Mocha({
+        examplesPath : path.resolve(process.cwd(), process.env.SAVE_EXAMPLES)
+    });
+    mocha.installHooks();
+}
+
+// class FunctionTester extends FT {
+//     constructor(fn) {
+//         super(fn, { mocha });
+//     }
+// }
+
+// const snippetTester = new SnippetTester(
+//     [  ],
+//     { mocha }
+// );
+
 
 export function load(relPath, clearCache) {
     const absPath = path.resolve(entry, relPath);
@@ -24,6 +46,7 @@ export class RuleTester {
     constructor(rules) {
         const { default:cottus, ValidationError } = load('index.js');
 
+        this._rules = rules;
         this._validator = cottus.compile(rules);
         this._ValidationError = ValidationError;
     }
@@ -32,6 +55,17 @@ export class RuleTester {
         const result = this._validator.validate(input);
 
         assert.deepEqual(result, output, msg);
+        if (mocha) {
+            const currentTest = mocha._ns.get('current');
+
+            mocha.EXAMPLES.push({
+                type   : 'rule-positive',
+                rules  : this._rules,
+                output : inspect(output),
+                input  : inspect(input),
+                test   : currentTest.id
+            });
+        }
     }
 
     negative(input, code, message, payload) {

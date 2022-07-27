@@ -7,23 +7,47 @@
 
 {{this.description}}
 
+{{#if this.alias}}
+**Alias**: ```{{this.alias}}```
+{{/if}}
+
 {{#if this.tags.spec}}
 **Specification**: {{this.tags.spec}}
 {{/if}}
 
+{{#is this.tags.depends.length 1}}
+**Note!** The [`{{this.tags.depends.[0]}}`](#{{this.tags.depends.[0]}}) rule is checked before running validation.
+{{/is}}
 
-{{#if this.tags.depends}}
-**Note!** The `{{this.tags.depends}}` rule is checked before running validation.
+{{#is this.tags.depends.length 2}}
+**Note!** The [`{{this.tags.depends.[0]}}`](#{{this.tags.depends.[0]}}) and [`{{this.tags.depends.[1]}}`](#{{this.tags.depends.[1]}}) rules are checked before running validation.
+{{/is}}
+
+{{#more this.tags.depends.length 2}}
+**Note!** Next rules are checked before running validation:
+{{#this.tags.depends}}
+   * [```{{this}}```](#{{this}})
+{{/this.tags.depends}}
+{{/more}}
+
+{{#if this.tags.error}}
+**Errors**:
+{{#this.tags.error}}
+   * [```{{this}}```](../errors#{{this}})
+{{/this.tags.error}}
 {{/if}}
 
 [Source]({{@root.info.repository.url}}/blob/{{@root.commit}}/{{this.file}}#L{{this.position}})
 
-{{#if this.testFile}}
-[Tests]({{@root.info.repository.url}}/blob/{{@root.commit}}/{{this.testFile}})
+{{#if this.testFiles}}
+{{#this.testFiles}}
+[Tests]({{@root.info.repository.url}}/blob/{{@root.commit}}/{{this}})
+{{/this.testFiles}}
 {{/if}}
 
 {{#any this.examples}}
 **Examples**
+
 {{#this.examples}}
 {{text}} *\({{type}}\)*
 ```javascript

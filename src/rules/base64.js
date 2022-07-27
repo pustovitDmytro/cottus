@@ -3,6 +3,14 @@ import StringRule from './string';
 
 import Base from './Base';
 
+/**
+ * Checks input to be a valid base64 string.
+ * @spec https://datatracker.ietf.org/doc/html/rfc5322#section-3.4.1
+ * @depends string
+ * @error NOT_BASE64
+ * @returns {string} valid base64 string
+ * @rule
+ */
 export default class Base64Rule extends Base {
     static schema = 'base64';
     validate(input) {

@@ -53,6 +53,13 @@ const rules = {
     ] } }
 };
 
+/**
+ * Checks string to be valid a cron string.
+ * @error INVALID_CRON
+ * @depends string
+ * @returns {string} valid cron string
+ * @rule
+ */
 export default class CronRule extends Base {
     static schema = 'cron';
 

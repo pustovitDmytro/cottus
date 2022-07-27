@@ -1,0 +1,9 @@
+import cottus from '{{info.name}}';
+
+const validator = cottus.compile({{json examples.[0].rules}});
+
+{{#examples}}
+    {{#is this.type 'rule-positive'}}
+validator.validate({{this.input}}) //{{this.output}}
+    {{/is}}
+{{/examples}}

@@ -8,6 +8,15 @@ import StringRule from './string';
 
 import Base from './Base';
 
+/**
+ * Checks input to be a valid encryption key.
+ * @depends string
+ * @depends base64
+ * @error BAD_ENCRYPTION_HEADER
+ * @error BAD_ENCRYPTION_FOOTER
+ * @returns {string} valid encryption key
+ * @rule
+ */
 export default class EncryptionKeyRule extends Base {
     static schema = [ 'encryption_key', 'encryptionKey' ];
     validate(input) {

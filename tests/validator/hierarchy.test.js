@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import cottus from '../entry';
 import { ensureError } from '../utils';
 
-suite('Validator: hierarchy');
+suite('Validator: hierarchy #skip-example');
 
 const validContact = {
     type  : 'email',

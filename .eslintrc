@@ -5,7 +5,8 @@
     "rules": {
         "lines-between-class-members": [ 0, { "exceptAfterSingleLine": true } ],
         "no-magic-numbers": ["error", { "ignore": [0, 1, 2, 4, -2] }],
-        "unicorn/filename-case" : [ 0 ]
+        "unicorn/filename-case" : [ 0 ],
+        "function-paren-newline": [ 0 ]
     },
     "overrides": [
         {

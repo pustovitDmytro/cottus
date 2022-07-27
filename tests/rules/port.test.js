@@ -2,7 +2,7 @@ import { RuleTester } from '../utils';
 
 const tester = new RuleTester('port');
 
-suite('Rules: port');
+suite('Rules: port #skip-example');
 
 test('Positive: numbers', function () {
     tester.positive(0, 0);

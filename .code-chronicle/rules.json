@@ -1,0 +1,9 @@
+{
+    "entry": [ "src/rules/**/*.js" ],
+    "examples": {
+        "tmpPath": "tmp/examples.json",
+        "templatePath": ".code-chronicle/examples.handlebars",
+        "eslint": false
+    },
+    "hooks": ".code-chronicle/rules.js"
+}
