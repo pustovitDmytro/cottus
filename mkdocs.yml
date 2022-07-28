@@ -4,3 +4,6 @@ nav:
   - 'Home': 'index.md'
   - 'Rules': 'rules.md'
   - 'Errors': 'errors.md'
+markdown_extensions:
+  - toc:
+      permalink: True
