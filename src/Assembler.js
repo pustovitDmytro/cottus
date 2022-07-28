@@ -121,10 +121,12 @@ class CMDVisitor {
     }
     'source'() {
         const data = fill(this.command.placeholder, this.dict);
+        const trimmed = this.assembler._options.trim ? data.trim() : data;
+        const clean = trimmed === '' ? this.assembler._options.empty : trimmed;
 
         return this.run({
             path       : this.command.path,
-            data,
+            data       : clean,
             validators : this.command.validators,
             template   : this.command.placeholder
         });
@@ -179,9 +181,14 @@ class CMDVisitor {
 }
 
 export default class Assembler {
-    constructor(cottus, schema) {
+    constructor(cottus, schema, options = {}) {
         this._schema = schema;
         this._cottus = cottus;
+        this._options = {
+            trim  : true,
+            empty : null,
+            ...options
+        };
     }
 
     parse() {

@@ -75,6 +75,27 @@ test('Positive: valid values', function () {
     });
 });
 
+test('Positive: empty values', function () {
+    const assembler = new Assembler(cottus, {
+        'value' : { $source: '{VALUE}', $validate: [ 'required', 'integer' ] },
+        'empty' : { $source: '{EMPTY_VALUE}', $validate: [ 'cron' ] },
+        'no'    : { $source: '{NO_VALUE}', $validate: [ 'email' ] }
+    });
+
+    assembler.parse();
+
+    const valid = assembler.run({
+        VALUE       : '1',
+        EMPTY_VALUE : ''
+    });
+
+    assert.deepEqual(valid, {
+        value : 1,
+        empty : null,
+        no    : null
+    });
+});
+
 test('Negative: validation errors', function () {
     const assembler = new Assembler(cottus, config);
 
