@@ -1,5 +1,5 @@
 # cottus
 JavaScript Validator
 
-- [Rules](/rules)
-- [Errors](/errors)
+- [Rules](rules)
+- [Errors](errors)
