@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable import/no-commonjs */
 /* eslint-disable import/unambiguous */
+const path = require('path');
 const { isArray, isString, toArray, isObject, uniqueIdenticFilter } = require('myrmidon');
 const rules = require('../lib/rules').default;
 
@@ -39,8 +40,13 @@ module.exports = {
             }
             ));
 
-        // eslint-disable-next-line unicorn/no-array-callback-reference
-        return { examples, testFiles: examples.map(e => e.file).filter(uniqueIdenticFilter) };
+        return {
+            examples,
+            testFiles : examples
+                .map(e => path.relative(process.cwd(), e.file))
+                .filter(uniqueIdenticFilter) // eslint-disable-line unicorn/no-array-callback-reference
+
+        };
     },
     handlebars(HandleBars) {
         HandleBars.registerHelper('json', json => {

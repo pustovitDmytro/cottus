@@ -1,0 +1,6 @@
+site_name: Cottus
+docs_dir: docs
+nav:
+  - 'Home': 'index.md'
+  - 'Rules': 'rules.md'
+  - 'Errors': 'errors.md'
