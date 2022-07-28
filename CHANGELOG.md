@@ -1,3 +1,10 @@
+## [1.10.9](https://github.com/pustovitDmytro/cottus/compare/v1.10.8...v1.10.9) (2022-07-28)
+
+
+### Docs
+
+* add mkdocs ([1172f43](https://github.com/pustovitDmytro/cottus/commit/1172f4342eed90dd0a180da41ddbc64afc641036))
+
 ## [1.10.8](https://github.com/pustovitDmytro/cottus/compare/v1.10.7...v1.10.8) (2022-07-27)
 
 
