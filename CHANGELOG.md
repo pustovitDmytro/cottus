@@ -1,3 +1,15 @@
+## [1.10.10](https://github.com/pustovitDmytro/cottus/compare/v1.10.9...v1.10.10) (2022-07-28)
+
+
+### Chore
+
+* fix mkdocs build ([710a281](https://github.com/pustovitDmytro/cottus/commit/710a28148120e066a15c367fe72e74717fb3464b))
+* fix relative links ([76c1fe2](https://github.com/pustovitDmytro/cottus/commit/76c1fe28a448e2a2154584fcb8990263f810b9c0))
+
+### Fix
+
+* empty values in assembler. closes #49 ([1a77e37](https://github.com/pustovitDmytro/cottus/commit/1a77e377b7e077024abcfd3c1ba69d0b64b68730)), closes [#49](https://github.com/pustovitDmytro/cottus/issues/49)
+
 ## [1.10.9](https://github.com/pustovitDmytro/cottus/compare/v1.10.8...v1.10.9) (2022-07-28)
 
 
