@@ -1,7 +1,7 @@
 {
   "name": "cottus",
   "version": "1.10.10",
-  "description": "boilerplate for creating npm packages",
+  "description": "customizable JavaScript data validator",
   "main": "./lib",
   "scripts": {
     "build:src": "babel src --out-dir ./lib --copy-files",
@@ -23,6 +23,13 @@
     "documentate:errors": "code-chronicle --config=.code-chronicle/errors.json .code-chronicle/errors.handlebars docs/errors.md",
     "documentate": "npm run documentate:examples && npm run build:src && npm run documentate:rules && npm run documentate:errors"
   },
+  "keywords": [
+    "validator",
+    "validate",
+    "customize",
+    "hierarchy",
+    ".env"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/pustovitDmytro/cottus"
