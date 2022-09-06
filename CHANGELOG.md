@@ -1,3 +1,10 @@
+## [1.10.11](https://github.com/pustovitDmytro/cottus/compare/v1.10.10...v1.10.11) (2022-09-06)
+
+
+### Docs
+
+* update keywords and description ([0f714b1](https://github.com/pustovitDmytro/cottus/commit/0f714b1ccaedc6f05deb6bcba9133df495285863))
+
 ## [1.10.10](https://github.com/pustovitDmytro/cottus/compare/v1.10.9...v1.10.10) (2022-07-28)
 
 
