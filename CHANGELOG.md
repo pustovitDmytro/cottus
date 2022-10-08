@@ -1,3 +1,10 @@
+## [1.10.12](https://github.com/pustovitDmytro/cottus/compare/v1.10.11...v1.10.12) (2022-10-08)
+
+
+### Docs
+
+* adds usage samples to documentation ([0f128d9](https://github.com/pustovitDmytro/cottus/commit/0f128d9e43e22db8b570042c9c01f89441fcb563))
+
 ## [1.10.11](https://github.com/pustovitDmytro/cottus/compare/v1.10.10...v1.10.11) (2022-09-06)
 
 

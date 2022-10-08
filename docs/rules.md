@@ -8,7 +8,21 @@ Checks object properties.
 
 *   [`NOT_OBJECT`](../errors#NOT_OBJECT)
 
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/attributes.js#L12)
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/attributes.js#L12)
+
+## base64
+
+Checks input to be a valid base64 string.
+
+**Specification**: https://datatracker.ietf.org/doc/html/rfc5322#section-3.4.1
+
+**Note!** The [`string`](#string) rule is checked before running validation.
+
+**Errors**:
+
+*   [`NOT_BASE64`](../errors#NOT_BASE64)
+
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/base64.js#L14)
 
 ## boolean
 
@@ -18,9 +32,9 @@ Checks input to be a boolean-like primitive.
 
 *   [`NOT_BOOLEAN`](../errors#NOT_BOOLEAN)
 
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/boolean.js#L13)
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/boolean.js#L13)
 
-[Tests](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/tests/rules/boolean.test.js)
+[Tests](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/tests/rules/boolean.test.js)
 
 **Examples**
 
@@ -82,9 +96,9 @@ Checks string to be valid a cron string.
 
 *   [`INVALID_CRON`](../errors#INVALID_CRON)
 
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/cron.js#L63)
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/cron.js#L63)
 
-[Tests](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/tests/rules/cron.test.js)
+[Tests](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/tests/rules/cron.test.js)
 
 **Examples**
 
@@ -116,56 +130,6 @@ validator.validate(undefined) //undefined
 
 ```
 
-## base64
-
-Checks input to be a valid base64 string.
-
-**Specification**: https://datatracker.ietf.org/doc/html/rfc5322#section-3.4.1
-
-**Note!** The [`string`](#string) rule is checked before running validation.
-
-**Errors**:
-
-*   [`NOT_BASE64`](../errors#NOT_BASE64)
-
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/base64.js#L14)
-
-## default
-
-Set default value.
-
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/default.js#L10)
-
-[Tests](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/tests/rules/default.test.js)
-
-**Examples**
-
-set default value *(positive)*
-
-```javascript
-import cottus from 'cottus';
-
-const validator = cottus.compile({"default":100});
-
-validator.validate(null) //100
-validator.validate(undefined) //100
-
-```
-
-skip if value is already set *(positive)*
-
-```javascript
-import cottus from 'cottus';
-
-const validator = cottus.compile({"default":100});
-
-validator.validate(false) //false
-validator.validate(NaN) //NaN
-validator.validate(0) //0
-validator.validate('') //''
-
-```
-
 ## email
 
 Checks input to be a valid email address.
@@ -178,9 +142,9 @@ Checks input to be a valid email address.
 
 *   [`WRONG_EMAIL`](../errors#WRONG_EMAIL)
 
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/email.js#L43)
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/email.js#L43)
 
-[Tests](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/tests/rules/email.test.js)
+[Tests](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/tests/rules/email.test.js)
 
 **Examples**
 
@@ -210,6 +174,42 @@ validator.validate(undefined) //undefined
 
 ```
 
+## default
+
+Set default value.
+
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/default.js#L10)
+
+[Tests](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/tests/rules/default.test.js)
+
+**Examples**
+
+set default value *(positive)*
+
+```javascript
+import cottus from 'cottus';
+
+const validator = cottus.compile({"default":100});
+
+validator.validate(null) //100
+validator.validate(undefined) //100
+
+```
+
+skip if value is already set *(positive)*
+
+```javascript
+import cottus from 'cottus';
+
+const validator = cottus.compile({"default":100});
+
+validator.validate(false) //false
+validator.validate(NaN) //NaN
+validator.validate(0) //0
+validator.validate('') //''
+
+```
+
 ## encryption_key
 
 Checks input to be a valid encryption key.
@@ -223,7 +223,45 @@ Checks input to be a valid encryption key.
 *   [`BAD_ENCRYPTION_HEADER`](../errors#BAD_ENCRYPTION_HEADER)
 *   [`BAD_ENCRYPTION_FOOTER`](../errors#BAD_ENCRYPTION_FOOTER)
 
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/encryptionKey.js#L20)
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/encryptionKey.js#L20)
+
+## every
+
+Validate array items.
+
+**Errors**:
+
+*   [`NOT_ARRAY`](../errors#NOT_ARRAY)
+
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/every.js#L12)
+
+[Tests](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/tests/rules/every.test.js)
+
+**Examples**
+
+valid input *(positive)*
+
+```javascript
+import cottus from 'cottus';
+
+const validator = cottus.compile({"every":"integer"});
+
+validator.validate([ 1 ]) //[ 1 ]
+validator.validate([ 0, 1, -3869 ]) //[ 0, 1, -3869 ]
+
+```
+
+cast by inner rule *(positive)*
+
+```javascript
+import cottus from 'cottus';
+
+const validator = cottus.compile({"every":"integer"});
+
+validator.validate([ '5' ]) //[ 5 ]
+validator.validate([ 10, '-34', -2 ]) //[ 10, -34, -2 ]
+
+```
 
 ## enum
 
@@ -233,9 +271,9 @@ Checks value to be one of possible options.
 
 *   [`NOT_ALLOWED_VALUE`](../errors#NOT_ALLOWED_VALUE)
 
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/enum.js#L11)
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/enum.js#L11)
 
-[Tests](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/tests/rules/enum.test.js)
+[Tests](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/tests/rules/enum.test.js)
 
 **Examples**
 
@@ -264,44 +302,6 @@ validator.validate(undefined) //undefined
 
 ```
 
-## every
-
-Validate array items.
-
-**Errors**:
-
-*   [`NOT_ARRAY`](../errors#NOT_ARRAY)
-
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/every.js#L12)
-
-[Tests](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/tests/rules/every.test.js)
-
-**Examples**
-
-valid input *(positive)*
-
-```javascript
-import cottus from 'cottus';
-
-const validator = cottus.compile({"every":"integer"});
-
-validator.validate([ 1 ]) //[ 1 ]
-validator.validate([ 0, 1, -3869 ]) //[ 0, 1, -3869 ]
-
-```
-
-cast by inner rule *(positive)*
-
-```javascript
-import cottus from 'cottus';
-
-const validator = cottus.compile({"every":"integer"});
-
-validator.validate([ '5' ]) //[ 5 ]
-validator.validate([ 10, '-34', -2 ]) //[ 10, -34, -2 ]
-
-```
-
 ## integer
 
 Checks value to be an integer.
@@ -312,9 +312,9 @@ Checks value to be an integer.
 
 *   [`NOT_INTEGER`](../errors#NOT_INTEGER)
 
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/integer.js#L12)
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/integer.js#L12)
 
-[Tests](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/tests/rules/integer.test.js)
+[Tests](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/tests/rules/integer.test.js)
 
 **Examples**
 
@@ -367,9 +367,9 @@ Checks value to be less than threshold.
 *   [`TOO_LONG`](../errors#TOO_LONG)
 *   [`WRONG_FORMAT`](../errors#WRONG_FORMAT)
 
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/max.js#L18)
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/max.js#L18)
 
-[Tests](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/tests/rules/max.test.js)
+[Tests](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/tests/rules/max.test.js)
 
 **Examples**
 
@@ -395,9 +395,9 @@ Checks value to be more than threshold.
 *   [`TOO_SHORT`](../errors#TOO_SHORT)
 *   [`WRONG_FORMAT`](../errors#WRONG_FORMAT)
 
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/min.js#L18)
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/min.js#L18)
 
-[Tests](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/tests/rules/min.test.js)
+[Tests](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/tests/rules/min.test.js)
 
 **Examples**
 
@@ -421,9 +421,9 @@ Checks value to be a number (or number-like string).
 
 *   [`NOT_NUMBER`](../errors#NOT_NUMBER)
 
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/number.js#L11)
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/number.js#L11)
 
-[Tests](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/tests/rules/number.test.js)
+[Tests](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/tests/rules/number.test.js)
 
 **Examples**
 
@@ -470,7 +470,7 @@ validator.validate(undefined) //undefined
 
 Checks value to match one of following rules. throws last failed rule, if none matched.
 
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/or.js#L10)
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/or.js#L10)
 
 ## port
 
@@ -483,7 +483,7 @@ Checks value to be a valid port number.
 *   [`NOT_NUMBER`](../errors#NOT_NUMBER)
 *   [`WRONG_PORT_NUMBER`](../errors#WRONG_PORT_NUMBER)
 
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/port.js#L12)
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/port.js#L12)
 
 ## required
 
@@ -493,9 +493,9 @@ Checks value is present.
 
 *   [`REQUIRED`](../errors#REQUIRED)
 
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/required.js#L10)
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/required.js#L10)
 
-[Tests](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/tests/rules/required.test.js)
+[Tests](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/tests/rules/required.test.js)
 
 **Examples**
 
@@ -520,9 +520,9 @@ Checks value to be a string.
 
 *   [`NOT_STRING`](../errors#NOT_STRING)
 
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/string.js#L10)
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/string.js#L10)
 
-[Tests](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/tests/rules/string.test.js)
+[Tests](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/tests/rules/string.test.js)
 
 **Examples**
 
@@ -563,9 +563,9 @@ Checks value to be a time unit.
 *   [`WRONG_TIME_UNIT`](../errors#WRONG_TIME_UNIT)
 *   [`WRONG_FORMAT`](../errors#WRONG_FORMAT)
 
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/timeUnit.js#L95)
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/timeUnit.js#L95)
 
-[Tests](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/tests/rules/timeUnit.test.js)
+[Tests](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/tests/rules/timeUnit.test.js)
 
 **Examples**
 
@@ -595,6 +595,16 @@ validator.validate(undefined) //undefined
 
 ```
 
+## to_lowercase
+
+Transforms value to lowercase.
+
+**Alias**: `to_lower`
+
+**Note!** The [`string`](#string) rule is checked before running validation.
+
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/toLower.js#L10)
+
 ## uuid
 
 Checks value to be a uuid v4.
@@ -605,9 +615,9 @@ Checks value to be a uuid v4.
 
 *   [`NOT_UUID`](../errors#NOT_UUID)
 
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/uuid.js#L23)
+[Source](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/src/rules/uuid.js#L23)
 
-[Tests](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/tests/rules/uuid.test.js)
+[Tests](https://github.com/pustovitDmytro/cottus/blob/0f128d9e43e22db8b570042c9c01f89441fcb563/tests/rules/uuid.test.js)
 
 **Examples**
 
@@ -634,13 +644,3 @@ validator.validate(null) //null
 validator.validate(undefined) //undefined
 
 ```
-
-## to_lowercase
-
-Transforms value to lowercase.
-
-**Alias**: `to_lower`
-
-**Note!** The [`string`](#string) rule is checked before running validation.
-
-[Source](https://github.com/pustovitDmytro/cottus/blob/0f714b1ccaedc6f05deb6bcba9133df495285863/src/rules/toLower.js#L10)
