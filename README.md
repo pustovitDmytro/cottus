@@ -36,6 +36,7 @@ I am stopping any support of my packages by the time until all russians leave my
   - [Requirements](#requirements)
   - [Installation](#installation)
   - [Usage](#usage)
+  - [Implementations](#implementations)
   - [Contribute](#contribute)
 
 ## Features
@@ -110,6 +111,8 @@ try {
 
 ```
 
+Check list of available rules at [reference][reference]
+
 ### Errors
 `CottusValidationError` would be returned in case of validation failure.
 
@@ -133,7 +136,7 @@ There are 2 ways of identifying this error:
       console.log('Data is valid:', valid);
   } catch (error) {
       if (error.isValidationError) {
-          onsole.error('Validation Failed:', error);
+          console.error('Validation Failed:', error);
       }
   
       console.error('Unknown error occured:', error);
@@ -149,6 +152,129 @@ There are 2 ways of identifying this error:
   ```javascript
   console.error(error.hash);
   ```
+
+### Assembler
+if you need to gather a flat list of values into the hierarchy and validate, use the **Assembler** module. 
+
+Typical use case - transforming environment variables into the config:
+
+ ```javascript
+import { Assembler } from 'cottus';
+
+const assembler = new Assembler(cottus, schema);
+const e = process.env;
+
+const schema = {
+     mongo : !!e.MONGO_CONNECTION_STRING ? {
+         url : { $source: '{MONGO_CONNECTION_STRING}', $validate: [ 'required', 'url' ] },
+         db  : { $source: '{MONGO_DB_NAME}', $validate: [ 'required', 'string' ] }
+     } : null,
+     redis : {
+         port     : { $source: '{REDIS_PORT}', $validate: [ 'required', 'port' ] },
+         host     : { $source: '{REDIS_HOST}', $validate: [ 'required', 'hostname' ] },
+         db       : { $source: '{REDIS_DB}', $validate: [ 'integer' ] },
+         password : { $source: '{REDIS_PASSWORD}', $validate: [ 'string' ] },
+         username : { $source: '{REDIS_USER}', $validate: [ 'string' ] }
+     },
+     'administrators' : {
+         $source   : { type: 'complex_array', prefix: 'ADMIN_' },
+         $validate : {
+             'login'     : { $source: '{_LOGIN}', $validate: [ 'required', 'email' ] },
+             'password'  : { $source: '{_PASSWORD}', $validate: [ 'string' ] },
+             permissions : {
+                 $source   : { type: 'simple_array', prefix: '_PERMISSIONS_' },
+                 $validate : { 'enum': [ 'read', 'write' ] }
+             }
+         }
+     }
+};
+
+assembler.parse();
+const config = assembler.run(process.env);
+```
+
+`schema` should be a hierarchical object. The deepest properties can be one of the following keywords:
+ - `$source`: can be a placeholder `'{REDIS_PORT}'` or an object: `{ type: 'complex_array', prefix: 'USER_' }`. Next types allowed:
+    * `complex_array`: array of objects
+    * `simple_array`: array of primitives
+    * `constant`: a value
+ - `$validate`: cottus schema.
+
+To check more examples, see [implementation](#implementations) section.
+### Custom rules
+
+cottus can be extended with new rules.
+
+```javascript
+import cottus, { BaseRule } from 'cottus';
+
+class Split extends BaseRule {
+    static schema = 'split';
+
+    validate(input) {
+        const symbol = this.params;
+
+        return input.split(symbol);
+    }
+}
+
+cottus.addRules([
+    Split
+]);
+
+```
+now rule `split` can be used in cottus schema:
+
+```javascript
+const validator = cottus.compile([
+    'required',
+    { 'split': ' ' },
+    { every: 'email' }
+]);
+
+const admins = validator.validate('sig@viwjirgo.bn neho@sorcopaz.ml ta@inepad.ax');
+
+console.log(admins);
+// ['sig@viwjirgo.bn', 'neho@sorcopaz.ml', 'ta@inepad.ax']
+```
+
+to throw validation error from the custom rule, use predefined errors:
+
+```javascript
+import { errors } from 'cottus';
+
+const { NOT_ALLOWED_VALUE } = errors;
+
+if (!valid) throw new NOT_ALLOWED_VALUE();
+```
+
+or create own error:
+```javascript
+import { BaseError } from 'cottus';
+
+class UnsafeNumberError extends BaseError {
+    message = 'The number is not within the safe range of JavaScript numbers';
+    code = 'UNSAFE_NUMBER';
+}
+```
+
+## Implementations
+
+Are you looking for more examples?
+
+**Validation**
+ * [ianus](https://github.com/pustovitDmytro/ianus/blob/master/src/lists)
+ * [ianus](https://github.com/pustovitDmytro/ianus/blob/master/src/etc/config.js)
+ * [semantic-release-telegram](https://github.com/pustovitDmytro/semantic-release-telegram/blob/master/src/verifyConditions.js)
+ * [semantic-release-heroku](https://github.com/pustovitDmytro/semantic-release-heroku/blob/master/src/verifyConditions.js)
+
+**Custom rules** 
+ * [ianus](https://github.com/pustovitDmytro/ianus/blob/master/src/utils/cottus.js): split string into array
+
+**Assembler**
+ * [ianus](https://github.com/pustovitDmytro/ianus/blob/master/src/etc/config.js): transform process.env into config
+ * [ianus](https://github.com/pustovitDmytro/ianus/blob/master/src/lists/Loader.js): load data from env or mongo collection.
+
 
 ## Contribute
 
@@ -207,3 +333,5 @@ Make the changes to the code and tests. Then commit to your branch. Be sure to f
 [regexp-email]: https://www.regular-expressions.info/email.html
 
 [RegExp]: https://en.wikipedia.org/wiki/Regular_expression
+
+[reference]: https://pustovitdmytro.github.io/cottus/
