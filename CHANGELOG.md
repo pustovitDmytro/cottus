@@ -1,3 +1,31 @@
+## [1.10.13](https://github.com/pustovitDmytro/cottus/compare/v1.10.12...v1.10.13) (2023-02-07)
+
+
+### Chore
+
+* adds requirements.txt for mkdocs ([dec5cfe](https://github.com/pustovitDmytro/cottus/commit/dec5cfe56ccadcb10aefe9631cecbfea844983bc))
+* anti-terrorism disclaimer ([96327fe](https://github.com/pustovitDmytro/cottus/commit/96327fef4c90f65fd297960d73872398334774c5))
+* fixes eslint-plugin-unicorn version ([dd45e9a](https://github.com/pustovitDmytro/cottus/commit/dd45e9a86498e621de2cd9bc49aa1f8430c8ed6c))
+* fixes npm audit ([0500470](https://github.com/pustovitDmytro/cottus/commit/05004700c0fd75120bebf51a70e25dfee1e3b840))
+* fixes some npm audit vulnerabilities ([b913fee](https://github.com/pustovitDmytro/cottus/commit/b913feef549bb124a121f8b0ff3b56148321140a))
+* fixes some npm audit vulnerabilities (#86) ([eb549de](https://github.com/pustovitDmytro/cottus/commit/eb549de6e36aba89fdf308f053f487c5bed0e1aa)), closes [#86](https://github.com/pustovitDmytro/cottus/issues/86)
+* Lock file maintenance ([85b7c09](https://github.com/pustovitDmytro/cottus/commit/85b7c09390c7a91407dd35ae8d997982a15ecc1a))
+* mkdocs path ([a29de3c](https://github.com/pustovitDmytro/cottus/commit/a29de3c264023a0512950aa64c742dd550442bbd))
+* Update dependency danger to v11 ([1779a27](https://github.com/pustovitDmytro/cottus/commit/1779a271eb3527ca1e6e5e5354cb3294ff6797e5))
+* Update dependency nanoid to 3.1.31 [SECURITY] (#83) ([89d3014](https://github.com/pustovitDmytro/cottus/commit/89d30145ca8e48ab718b3a3d6ca376d6972e3ce1)), closes [#83](https://github.com/pustovitDmytro/cottus/issues/83)
+* Update dependency node-fetch to 2.6.7 [SECURITY] (#84) ([11e82bc](https://github.com/pustovitDmytro/cottus/commit/11e82bc5133b8b2d7bc18fa7730252c6068e134b)), closes [#84](https://github.com/pustovitDmytro/cottus/issues/84)
+* Update devDependencies (non-major) ([01bd6c0](https://github.com/pustovitDmytro/cottus/commit/01bd6c09f1ba5886abdb991b436317f741eeb20b))
+* Update devDependencies (non-major) ([85a0161](https://github.com/pustovitDmytro/cottus/commit/85a0161b7426b877ec45f6956238f93810e5b3c9))
+* Update devDependencies (non-major) (#65) ([d60ef28](https://github.com/pustovitDmytro/cottus/commit/d60ef28cb4cbf187b61fd4c5b70b3bfb5338e6c0)), closes [#65](https://github.com/pustovitDmytro/cottus/issues/65)
+* Update devDependencies (non-major) (#66) ([69aac8f](https://github.com/pustovitDmytro/cottus/commit/69aac8f4b52fcb9a626780be4c14d211f86b62b6)), closes [#66](https://github.com/pustovitDmytro/cottus/issues/66)
+* Update devDependencies (non-major) (#92) ([f492769](https://github.com/pustovitDmytro/cottus/commit/f492769892ff31c1dad30248c58ae7c5ae7aec85)), closes [#92](https://github.com/pustovitDmytro/cottus/issues/92)
+
+### Docs
+
+* adds logo ([b0d0aa9](https://github.com/pustovitDmytro/cottus/commit/b0d0aa920af544e202cf34bd35b9a82c62383dbd))
+* drop lgtm ([b1841f2](https://github.com/pustovitDmytro/cottus/commit/b1841f24770563faafb609444868658fba298b81))
+* update year in license ([64521cb](https://github.com/pustovitDmytro/cottus/commit/64521cb04f41c46b7bdcbba18bec8d4673736a31))
+
 ## [1.10.12](https://github.com/pustovitDmytro/cottus/compare/v1.10.11...v1.10.12) (2022-10-08)
 
 
