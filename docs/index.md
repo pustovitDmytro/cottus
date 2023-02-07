@@ -1,3 +1,4 @@
+![Logo](logo_250.png "cottus")
 # cottus
 JavaScript Validator
 
