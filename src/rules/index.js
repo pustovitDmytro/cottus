@@ -18,6 +18,7 @@ import timeUnit from './timeUnit';
 import cron from './cron';
 import or from './or';
 import toLower from './toLower';
+import date from './date';
 
 export default [
     required,
@@ -34,5 +35,6 @@ export default [
     timeUnit,
     cron,
     or,
-    toLower
+    toLower,
+    date
 ];

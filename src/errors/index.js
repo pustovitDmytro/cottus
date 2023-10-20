@@ -20,6 +20,7 @@ import NOT_UUID          from './format/NOT_UUID';
 import NOT_ALLOWED_VALUE from './format/NOT_ALLOWED_VALUE';
 import WRONG_TIME_UNIT   from './format/WRONG_TIME_UNIT';
 import INVALID_CRON      from './format/INVALID_CRON';
+import NOT_DATE          from './format/NOT_DATE';
 
 import BAD_ENCRYPTION_HEADER from './format/BAD_ENCRYPTION_HEADER';
 import BAD_ENCRYPTION_FOOTER from './format/BAD_ENCRYPTION_FOOTER';
@@ -47,6 +48,7 @@ export {
     NOT_ALLOWED_VALUE,
     WRONG_TIME_UNIT,
     INVALID_CRON,
+    NOT_DATE,
 
     BAD_ENCRYPTION_HEADER,
     BAD_ENCRYPTION_FOOTER
