@@ -1,6 +1,6 @@
 {
   "name": "cottus",
-  "version": "1.10.13",
+  "version": "1.11.0",
   "description": "customizable JavaScript data validator",
   "main": "./lib",
   "scripts": {

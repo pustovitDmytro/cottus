@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/pustovitDmytro/cottus/compare/v1.10.13...v1.11.0) (2023-10-20)
+
+
+### New
+
+* adds date rule ([7c7a6d8](https://github.com/pustovitDmytro/cottus/commit/7c7a6d81792ca90799d9c4ab636fad48ae63346c))
+
 ## [1.10.13](https://github.com/pustovitDmytro/cottus/compare/v1.10.12...v1.10.13) (2023-02-07)
 
 
